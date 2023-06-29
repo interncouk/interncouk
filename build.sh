@@ -1,21 +1,14 @@
 #!/bin/bash
 set -e
 
-# Check if Node.js is installed
-if ! command -v node &> /dev/null; then
-    echo "Node.js is not found. Installing Node.js..."
-    
-    # Install Node.js and npm
-    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-    sudo apt-get install -y nodejs
+# Print a message to indicate that the build script is running
+echo "Running build script..."
 
-    echo "Node.js is installed."
-else
-    echo "Node.js is already installed."
-fi
+# Install any required dependencies or packages
+echo "Installing dependencies..."
 
-# Install Node.js dependencies
-npm install --production
+# Build steps
+# Add your build commands here
 
-# Package the application
-zip -r deployment-package.zip .
+# Print a message to indicate that the build process is completed
+echo "Build process completed."
