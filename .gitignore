@@ -6,8 +6,6 @@
 .DS_Store
 Thumbs.db
 /bower_components
-.env
-.htaccess
 .env.backup
 /.idea
 /.vscode
