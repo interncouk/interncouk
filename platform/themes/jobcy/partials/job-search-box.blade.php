@@ -4,7 +4,7 @@
         $colClass = $withCategories ? 'col-lg-3' : 'col-lg-4';
     @endphp
     {!! Form::open(['url' => JobBoardHelper::getJobsPageURL(), 'method' => 'GET']) !!}
-        <div class="registration-form">
+        <div class="registration-form px-lg-3 px-3">
             <div class="row g-0">
                 <div class="{{ $colClass }}">
                     <div class="filter-search-form filter-border mt-3 mt-lg-0">
@@ -15,7 +15,7 @@
                 </div><!--end col-->
                 @if (is_plugin_active('location'))
                     <div class="{{ $colClass }}">
-                        <div class="filter-search-form mt-3 mt-md-0">
+                        <div class="filter-search-form mt-3 mt-lg-0">
                             <i class="uil uil-map-marker"></i>
                             <select class="form-select" data-trigger name="city_id"
                                 id="choices-single-location"
@@ -45,9 +45,9 @@
                         </div>
                     </div><!--end col-->
                 @endif
-                <div class="{{ $colClass }}">
-                    <div class="mt-3 mt-lg-0 h-100">
-                        <button class="btn btn-primary submit-btn w-100 h-100" type="submit">
+                <div class="{{ $colClass }} search-item-btn">
+                    <div class="mt-3 mt-lg-0 h-100 mb-3 mb-lg-0">
+                        <button class="btn btn-primary submit-btn w-100" type="submit">
                             <i class="uil uil-search me-1"></i>
                             <span>{{ __('Find Job') }}</span>
                         </button>

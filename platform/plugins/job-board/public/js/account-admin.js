@@ -1,1 +1,247 @@
-(()=>{"use strict";$(document).ready((function(){$(document).on("click","#is_change_password",(function(e){$(e.currentTarget).is(":checked")?$("input[type=password]").closest(".form-group").removeClass("hidden").fadeIn():$("input[type=password]").closest(".form-group").addClass("hidden").fadeOut()})),$(document).on("click",".btn-trigger-add-credit",(function(e){e.preventDefault(),$("#add-credit-modal").modal("show")})),$(document).on("click",".btn-trigger-add-education",(function(e){e.preventDefault(),$("#add-education-modal").modal("show")})),$(document).on("click",".btn-trigger-edit-education",(function(e){e.preventDefault();var o=$(e.currentTarget);$.ajax({type:"GET",cache:!1,url:o.data("section"),success:function(e){e.error?Botble.showNotice("error",e.message):($("#edit-education-modal .modal-body").html(""),$("#edit-education-modal .modal-body").append(e),$("#edit-education-modal").modal("show")),o.removeClass("button-loading")},error:function(e){Botble.handleError(e),o.removeClass("button-loading")}})})),$(document).on("click","#confirm-edit-education-button",(function(e){e.preventDefault();var o=$(e.currentTarget);o.addClass("button-loading"),$.ajax({type:"POST",cache:!1,url:o.closest(".modal-content").find("form").prop("action"),data:o.closest(".modal-content").find("form").serialize(),success:function(e){e.error?Botble.showNotice("error",e.message):(Botble.showNotice("success",e.message),$("#edit-education-modal").modal("hide"),o.closest(".modal-content").find("form").get(0).reset(),$("#education-histories").load($(".page-content form").prop("action")+" #education-histories > *")),o.removeClass("button-loading")},error:function(e){Botble.handleError(e),o.removeClass("button-loading")}})})),$(document).on("click","#confirm-add-education-button",(function(e){e.preventDefault();var o=$(e.currentTarget);o.addClass("button-loading"),$.ajax({type:"POST",cache:!1,url:o.closest(".modal-content").find("form").prop("action"),data:o.closest(".modal-content").find("form").serialize(),success:function(e){e.error?Botble.showNotice("error",e.message):(Botble.showNotice("success",e.message),$("#add-education-modal").modal("hide"),o.closest(".modal-content").find("form").get(0).reset(),$("#education-histories").load($(".page-content form").prop("action")+" #education-histories > *")),o.removeClass("button-loading")},error:function(e){Botble.handleError(e),o.removeClass("button-loading")}})})),$(document).on("click","#confirm-add-credit-button",(function(e){e.preventDefault();var o=$(e.currentTarget);o.addClass("button-loading"),$.ajax({type:"POST",cache:!1,url:o.closest(".modal-content").find("form").prop("action"),data:o.closest(".modal-content").find("form").serialize(),success:function(e){e.error?Botble.showNotice("error",e.message):(Botble.showNotice("success",e.message),$("#add-credit-modal").modal("hide"),o.closest(".modal-content").find("form").get(0).reset(),$("#credit-histories").load($(".page-content form").prop("action")+" #credit-histories > *")),o.removeClass("button-loading")},error:function(e){Botble.handleError(e),o.removeClass("button-loading")}})})),$(document).on("click",".show-timeline-dropdown",(function(e){e.preventDefault(),$($(e.currentTarget).data("target")).slideToggle(),$(e.currentTarget).closest(".comment-log-item").toggleClass("bg-white")})),$(document).on("click",".deleteDialog",(function(e){e.preventDefault();var o=$(e.currentTarget);$(".delete-crud-entry").data("section",o.data("section")),$(".modal-confirm-delete").modal("show")})),$(".delete-crud-entry").on("click",(function(e){e.preventDefault();var o=$(e.currentTarget);o.addClass("button-loading");var t=o.data("section");$.ajax({url:t,type:"POST",data:{_method:"DELETE"},success:function(e){e.error?Botble.showError(e.message):(Botble.showSuccess(e.message),$("#education-histories").load($(".page-content form").prop("action")+" #education-histories > *"),$("#experience-histories").load($(".page-content form").prop("action")+" #experience-histories > *")),o.closest(".modal").modal("hide"),o.removeClass("button-loading")},error:function(e){Botble.handleError(e),o.removeClass("button-loading")}})})),$(document).on("click",".btn-trigger-add-experience",(function(e){e.preventDefault(),$("#add-experience-modal").modal("show"),Botble.initResources()})),$(document).on("click","#confirm-add-experience-button",(function(e){e.preventDefault();var o=$(e.currentTarget);o.addClass("button-loading"),$.ajax({type:"POST",cache:!1,url:o.closest(".modal-content").find("form").prop("action"),data:o.closest(".modal-content").find("form").serialize(),success:function(e){e.error?Botble.showNotice("error",e.message):(Botble.showNotice("success",e.message),$("#add-experience-modal").modal("hide"),o.closest(".modal-content").find("form").get(0).reset(),$("#experience-histories").load($(".page-content form").prop("action")+" #experience-histories > *")),o.removeClass("button-loading")},error:function(e){Botble.handleError(e),o.removeClass("button-loading")}})})),$(document).on("click",".btn-trigger-edit-experience",(function(e){e.preventDefault();var o=$(e.currentTarget);$.ajax({type:"GET",cache:!1,url:o.data("section"),success:function(e){e.error?Botble.showNotice("error",e.message):($("#edit-experience-modal .modal-body").html(""),$("#edit-experience-modal .modal-body").append(e),$("#edit-experience-modal").modal("show")),o.removeClass("button-loading")},error:function(e){Botble.handleError(e),o.removeClass("button-loading")}})})),$(document).on("click","#confirm-edit-experience-button",(function(e){e.preventDefault();var o=$(e.currentTarget);o.addClass("button-loading"),$.ajax({type:"POST",cache:!1,url:o.closest(".modal-content").find("form").prop("action"),data:o.closest(".modal-content").find("form").serialize(),success:function(e){e.error?Botble.showNotice("error",e.message):(Botble.showNotice("success",e.message),$("#edit-experience-modal").modal("hide"),o.closest(".modal-content").find("form").get(0).reset(),$("#experience-histories").load($(".page-content form").prop("action")+" #experience-histories > *")),o.removeClass("button-loading")},error:function(e){Botble.handleError(e),o.removeClass("button-loading")}})}))}))})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!*************************************************************************!*\
+  !*** ./platform/plugins/job-board/resources/assets/js/account-admin.js ***!
+  \*************************************************************************/
+
+
+$(document).ready(function () {
+  $(document).on('click', '#is_change_password', function (event) {
+    if ($(event.currentTarget).is(':checked')) {
+      $('input[type=password]').closest('.form-group').removeClass('hidden').fadeIn();
+    } else {
+      $('input[type=password]').closest('.form-group').addClass('hidden').fadeOut();
+    }
+  });
+  $(document).on('click', '.btn-trigger-add-credit', function (event) {
+    event.preventDefault();
+    $('#add-credit-modal').modal('show');
+  });
+  $(document).on('click', '.btn-trigger-add-education', function (event) {
+    event.preventDefault();
+    $('#add-education-modal').modal('show');
+  });
+  $(document).on('click', '.btn-trigger-edit-education', function (event) {
+    event.preventDefault();
+    var _self = $(event.currentTarget);
+    $.ajax({
+      type: 'GET',
+      cache: false,
+      url: _self.data('section'),
+      success: function success(res) {
+        if (!res.error) {
+          $('#edit-education-modal .modal-body').html('');
+          $('#edit-education-modal .modal-body').append(res);
+          $('#edit-education-modal').modal('show');
+        } else {
+          Botble.showNotice('error', res.message);
+        }
+        _self.removeClass('button-loading');
+      },
+      error: function error(res) {
+        Botble.handleError(res);
+        _self.removeClass('button-loading');
+      }
+    });
+  });
+  $(document).on('click', '#confirm-edit-education-button', function (event) {
+    event.preventDefault();
+    var _self = $(event.currentTarget);
+    _self.addClass('button-loading');
+    $.ajax({
+      type: 'POST',
+      cache: false,
+      url: _self.closest('.modal-content').find('form').prop('action'),
+      data: _self.closest('.modal-content').find('form').serialize(),
+      success: function success(res) {
+        if (!res.error) {
+          Botble.showNotice('success', res.message);
+          $('#edit-education-modal').modal('hide');
+          _self.closest('.modal-content').find('form').get(0).reset();
+          $('#education-histories').load($('.page-content form').prop('action') + ' #education-histories > *');
+        } else {
+          Botble.showNotice('error', res.message);
+        }
+        _self.removeClass('button-loading');
+      },
+      error: function error(res) {
+        Botble.handleError(res);
+        _self.removeClass('button-loading');
+      }
+    });
+  });
+  $(document).on('click', '#confirm-add-education-button', function (event) {
+    event.preventDefault();
+    var _self = $(event.currentTarget);
+    _self.addClass('button-loading');
+    $.ajax({
+      type: 'POST',
+      cache: false,
+      url: _self.closest('.modal-content').find('form').prop('action'),
+      data: _self.closest('.modal-content').find('form').serialize(),
+      success: function success(res) {
+        if (!res.error) {
+          Botble.showNotice('success', res.message);
+          $('#add-education-modal').modal('hide');
+          _self.closest('.modal-content').find('form').get(0).reset();
+          $('#education-histories').load($('.page-content form').prop('action') + ' #education-histories > *');
+        } else {
+          Botble.showNotice('error', res.message);
+        }
+        _self.removeClass('button-loading');
+      },
+      error: function error(res) {
+        Botble.handleError(res);
+        _self.removeClass('button-loading');
+      }
+    });
+  });
+  $(document).on('click', '#confirm-add-credit-button', function (event) {
+    event.preventDefault();
+    var _self = $(event.currentTarget);
+    _self.addClass('button-loading');
+    $.ajax({
+      type: 'POST',
+      cache: false,
+      url: _self.closest('.modal-content').find('form').prop('action'),
+      data: _self.closest('.modal-content').find('form').serialize(),
+      success: function success(res) {
+        if (!res.error) {
+          Botble.showNotice('success', res.message);
+          $('#add-credit-modal').modal('hide');
+          _self.closest('.modal-content').find('form').get(0).reset();
+          $('#credit-histories').load($('.page-content form').prop('action') + ' #credit-histories > *');
+        } else {
+          Botble.showNotice('error', res.message);
+        }
+        _self.removeClass('button-loading');
+      },
+      error: function error(res) {
+        Botble.handleError(res);
+        _self.removeClass('button-loading');
+      }
+    });
+  });
+  $(document).on('click', '.show-timeline-dropdown', function (event) {
+    event.preventDefault();
+    $($(event.currentTarget).data('target')).slideToggle();
+    $(event.currentTarget).closest('.comment-log-item').toggleClass('bg-white');
+  });
+  $(document).on('click', '.deleteDialog', function (event) {
+    event.preventDefault();
+    var _self = $(event.currentTarget);
+    $('.delete-crud-entry').data('section', _self.data('section'));
+    $('.modal-confirm-delete').modal('show');
+  });
+  $('.delete-crud-entry').on('click', function (event) {
+    event.preventDefault();
+    var _self = $(event.currentTarget);
+    _self.addClass('button-loading');
+    var deleteURL = _self.data('section');
+    $.ajax({
+      url: deleteURL,
+      type: 'POST',
+      data: {
+        '_method': 'DELETE'
+      },
+      success: function success(data) {
+        if (data.error) {
+          Botble.showError(data.message);
+        } else {
+          Botble.showSuccess(data.message);
+          $('#education-histories').load($('.page-content form').prop('action') + ' #education-histories > *');
+          $('#experience-histories').load($('.page-content form').prop('action') + ' #experience-histories > *');
+        }
+        _self.closest('.modal').modal('hide');
+        _self.removeClass('button-loading');
+      },
+      error: function error(data) {
+        Botble.handleError(data);
+        _self.removeClass('button-loading');
+      }
+    });
+  });
+  $(document).on('click', '.btn-trigger-add-experience', function (event) {
+    event.preventDefault();
+    $('#add-experience-modal').modal('show');
+    Botble.initResources();
+  });
+  $(document).on('click', '#confirm-add-experience-button', function (event) {
+    event.preventDefault();
+    var _self = $(event.currentTarget);
+    _self.addClass('button-loading');
+    $.ajax({
+      type: 'POST',
+      cache: false,
+      url: _self.closest('.modal-content').find('form').prop('action'),
+      data: _self.closest('.modal-content').find('form').serialize(),
+      success: function success(res) {
+        if (!res.error) {
+          Botble.showNotice('success', res.message);
+          $('#add-experience-modal').modal('hide');
+          _self.closest('.modal-content').find('form').get(0).reset();
+          $('#experience-histories').load($('.page-content form').prop('action') + ' #experience-histories > *');
+        } else {
+          Botble.showNotice('error', res.message);
+        }
+        _self.removeClass('button-loading');
+      },
+      error: function error(res) {
+        Botble.handleError(res);
+        _self.removeClass('button-loading');
+      }
+    });
+  });
+  $(document).on('click', '.btn-trigger-edit-experience', function (event) {
+    event.preventDefault();
+    var _self = $(event.currentTarget);
+    $.ajax({
+      type: 'GET',
+      cache: false,
+      url: _self.data('section'),
+      success: function success(res) {
+        if (!res.error) {
+          $('#edit-experience-modal .modal-body').html('');
+          $('#edit-experience-modal .modal-body').append(res);
+          $('#edit-experience-modal').modal('show');
+        } else {
+          Botble.showNotice('error', res.message);
+        }
+        _self.removeClass('button-loading');
+      },
+      error: function error(res) {
+        Botble.handleError(res);
+        _self.removeClass('button-loading');
+      }
+    });
+  });
+  $(document).on('click', '#confirm-edit-experience-button', function (event) {
+    event.preventDefault();
+    var _self = $(event.currentTarget);
+    _self.addClass('button-loading');
+    $.ajax({
+      type: 'POST',
+      cache: false,
+      url: _self.closest('.modal-content').find('form').prop('action'),
+      data: _self.closest('.modal-content').find('form').serialize(),
+      success: function success(res) {
+        if (!res.error) {
+          Botble.showNotice('success', res.message);
+          $('#edit-experience-modal').modal('hide');
+          _self.closest('.modal-content').find('form').get(0).reset();
+          $('#experience-histories').load($('.page-content form').prop('action') + ' #experience-histories > *');
+        } else {
+          Botble.showNotice('error', res.message);
+        }
+        _self.removeClass('button-loading');
+      },
+      error: function error(res) {
+        Botble.handleError(res);
+        _self.removeClass('button-loading');
+      }
+    });
+  });
+});
+/******/ })()
+;

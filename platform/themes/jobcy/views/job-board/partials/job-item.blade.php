@@ -1,6 +1,6 @@
 <div class="job-box @if ($job->is_saved) bookmark-post @endif card mt-4"
     data-latitude="{{ $job->latitude }}"
-    data-longitude="{{ $job->longitude }}"
+    data-longitude="{{ $job->longitude }}"  
     data-company_logo_thumb="{{ $job->company->logo_thumb }}"
     data-company_name="{{ $job->company_name ?: $job->name }}"
     data-map_icon="{{ $job->salary_text }}"
@@ -38,18 +38,41 @@
                 </div>
             </div>
             <!--end col-->
-            <div class="col-md-3">
+            <div class="col-md-10">
                 <div class="mb-2 mb-md-0">
                     <h3 class="fs-18 mb-1 h5">
-                        <a href="{{ $job->url }}" class="text-dark">{{ $job->name }}</a>
+                        <a href="{{ $job->url }}" class="text-dark job_name">{{ $job->name }}</a>
                     </h3>
-                    @if ($job->has_company)
-                        <p class="text-muted fs-14 mb-0">{{ $job->company->name }}</p>
-                    @endif
+                    <div class="job-info">
+                        @if ($job->has_company)
+                            <span class="fs-14 mb-0 company_name">{{ $job->company->name }}</span>
+                        @endif
+                        @if ($job->location)
+                            <span class="text-muted mb-0">
+                                <i class="uil uil-map-marker"></i>
+                                {{ $job->location }}
+                            </span>
+                        @endif
+                        @if ($job->jobTypes->count())
+                            @foreach($job->jobTypes as $jobType)
+                                <span>
+                                    <i class="uil uil-bag-alt"></i>
+                                    {{ $jobType->name }}@if (!$loop->last), @endif
+                                </span>
+                            @endforeach
+                        @endif
+                        <span class="text-primary salary_text">{{ $job->salary_text }}</span>
+                    </div>
                 </div>
             </div>
+            <div>
+                <p class="text-muted mb-0 job_description">
+                    {{ $job->description }}
+                </p>
+            </div>
             <!--end col-->
-            <div class="col-md-3">
+            <!--test col-->
+            <!-- <div class="col-md-3">
                 @if ($job->location)
                     <div class="d-flex mb-2">
                         <div class="d-flex mb-2">
@@ -64,17 +87,17 @@
                 @endif
 
                 {!! apply_filters('job-item-extra-data', null, $job) !!}
-            </div>
+            </div> -->
             <!--end col-->
-            <div class="col-md-2">
+            <!-- <div class="col-md-2">
                 <div>
                     <p class="text-muted mb-2">
                         <span class="text-primary">{{ $job->salary_text }}</span>
                     </p>
                 </div>
-            </div>
+            </div> -->
             <!--end col-->
-            @if ($job->jobTypes->count())
+            <!-- @if ($job->jobTypes->count())
                 <div class="col-md-2">
                     <div class="text-md-end">
                         @foreach($job->jobTypes as $jobType)
@@ -82,7 +105,7 @@
                         @endforeach
                     </div>
                 </div>
-            @endif
+            @endif -->
             <!--end col-->
         </div>
         <!--end row-->

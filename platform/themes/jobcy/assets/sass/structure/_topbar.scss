@@ -4,7 +4,7 @@
 
 /********************TOP-BAR********************/
 .top-bar {
-    background-color: $light;
+    background-color: $white;
     position: absolute;
     left: 0;
     right: 0;
@@ -21,6 +21,7 @@
         text-align: center;
         color: $dark;
         transition: all 0.5s ease;
+
         &:hover {
             color: $success;
         }
@@ -42,19 +43,18 @@
     padding: 0;
     margin-top: 44px;
     background-color: $white;
-    box-shadow: $box-shadow;
 
     .navbar-nav {
         .nav-link {
             color: $dark;
-            font-size: 13px;
+            font-size: 16px;
             background-color: transparent;
-            padding: 23px 18px;
-            text-transform: uppercase;
+            padding: 23px 22px;
             transition: all 0.3s ease;
             position: relative;
-            font-weight: 600;
-            &:hover,    
+            font-weight: 500;
+
+            &:hover,
             &:active,
             &.active {
                 color: $primary;
@@ -108,21 +108,22 @@
             background-color: $light;
         }
     }
-    
+
 }
 
 .notification-header {
     padding: 1rem;
 }
-.notification-footer{
+
+.notification-footer {
     padding: 10px;
 }
 
 .noti-icon {
-    .count{
+    .count {
         position: absolute;
         top: 15px;
-        right: -6px;    
+        right: -6px;
         margin-top: -3px;
         margin-right: -5px;
         width: 21px;
@@ -179,6 +180,7 @@
 
 .arrow-down {
     display: inline-block;
+
     &:after {
         border: 0;
         left: auto;
@@ -207,6 +209,13 @@
 
     .top-bar {
         display: none;
+    }
+    .navbar.mobile-fixed-top {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
     }
 }
 
@@ -248,7 +257,7 @@ body[data-layout-mode='dark'] {
         }
     }
 
-    .noti-icon .count{
+    .noti-icon .count {
         border-color: $gray-dark-300;
     }
 

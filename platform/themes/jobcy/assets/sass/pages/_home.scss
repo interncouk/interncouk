@@ -1,7 +1,7 @@
 //
 //home.scss
 //
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
 #home {
     position: relative;
     background-repeat: no-repeat;
@@ -10,12 +10,12 @@
 }
 
 .bg-home {
-    padding: 300px 0px 240px 0px;
-    background-color: #{rgba($primaryRgb, 0.95)};
+    padding: 130px 0px 240px 0px;
+    background-color: #fff9f3;
 
     @media (max-width: 767.98px) {
         padding: 155px 0px 110px 0px;
-        background-color: $primary;
+        background-color: #fff9f3;
     }
 
     .bg-overlay {
@@ -23,6 +23,104 @@
         background-size: cover;
         background-position: center;
     }
+    .home-title-div{
+        margin-bottom: 80px;
+        .home-main-title {
+            font-weight: 700;
+            font-size: 55px;
+            line-height: 67px;
+            color: #1f2938;
+            font-family: "Montserrat", sans-serif;
+    
+            @media (max-width: 991.98px) {
+                font-size: 36px;
+                line-height: 1.2;
+            }
+        }
+    }
+    &::before {
+        /* CSS styles for ::before pseudo-element */
+        /* For example: */
+        content: "";
+        position: absolute;
+        height: 351px;
+        width: 400px;
+        position: absolute;
+        bottom: -53px;
+        left: 40px;
+        background: url(/storage/general/designer.svg) no-repeat 0px 0px;
+        background-size: contain;
+      }
+    
+      &::after {
+        /* CSS styles for ::after pseudo-element */
+        /* For example: */
+        content: "";
+        height: 351px;
+        width: 400px;
+        position: absolute;
+        bottom: -53px;
+        right: 20px;
+        background: url(/storage/general/working.svg) no-repeat 0px 0px;
+        background-size: contain;
+      }
+      .container{
+        padding-top:160px;
+        .registration-form{
+            background: #fff;
+            box-shadow: 0px 18px 40px rgba(25, 15, 9, 0.1);
+            border-radius: 20px;
+            max-width: 720px;
+            width: 100%;
+            margin: 0 auto;
+            .filter-search-form{
+                border: 1px solid rgba(26, 15, 9, 0.1);
+                border-radius: 10px;
+                
+                .form-control{
+                    border-radius: 10px;
+                    font-size: 16px;
+                    padding: 10px 20px 10px 45px;
+                    height: auto;
+                }
+                .choices[data-type*=select-one] .choices__inner{
+                    border-radius: 10px;
+                    font-size: 16px;
+                    padding: 10px 30px 10px 45px;
+                    height: auto;
+                    .choices__list--single{
+                        padding: unset;
+                    }
+                }
+            }
+            @media (min-width: 992px){
+                .filter-search-form{
+                    margin-right: 10px;
+                }
+            }
+            .row{
+                @media (min-width: 992px){
+                    .col-lg-4{
+                        flex: 1.3;
+                        width: auto;
+                    }
+                    .search-item-btn{
+                        flex: 0.4;
+                    }
+                }
+            }
+            .submit-btn{
+                min-width: 127px;
+                width: auto!important;
+                border-radius: 10px;
+            }
+        }
+      }
+      @media (min-width: 992px){
+        .registration-form{
+            padding: 22px 30px;
+        }
+      }
 }
 
 .filter-search-form {
@@ -41,7 +139,7 @@
 
 .registration-form {
     position: relative;
-
+    z-index: 3;
     .submit-btn {
         border-radius: 8px;
     }
@@ -55,7 +153,7 @@
 @media (min-width:992px) {
     .filter-border {
         &::before {
-            content: "";
+            // content: "";
             border-right: 1px solid $gray-400;
             position: absolute;
             right: 4px;
@@ -67,7 +165,7 @@
 
     .registration-form {
         position: relative;
-
+        z-index: 3;
         .submit-btn {
             border-radius: 0px 8px 8px 0px;
         }
@@ -109,8 +207,9 @@
 //home-2
 .bg-home2 {
     padding: 198px 0 140px 0;
-    background-color: rgba($primaryRgb, 0.1);
+    background-color: #fff9f3;
     overflow-x: clip;
+
     @media (max-width: 767.98px) {
         padding: 160px 0 125px 0;
     }
@@ -128,27 +227,32 @@
     padding: 210px 0 95px 0;
     background-color: rgba($primaryRgb, 0.1);
     overflow-x: clip;
+
     @media (max-width: 767.98px) {
         padding: 160px 0 90px 0;
     }
 }
 
 .home-slider {
-    .home-slide-box{
+    .home-slide-box {
         position: relative;
-        .bg-overlay{
-            background: linear-gradient(to top, rgba($black, 0.75) , transparent);
+
+        .bg-overlay {
+            background: linear-gradient(to top, rgba($black, 0.75), transparent);
         }
+
         .home-slide-content {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
+
             .slide-para {
                 font-family: $font-family-secondary;
             }
         }
     }
+
     @media (min-width:992px) {
         width: 200%;
 
@@ -176,7 +280,7 @@
     }
 }
 
-.quote-icon{
+.quote-icon {
     .icon {
         position: absolute;
         top: -32px;
@@ -185,6 +289,7 @@
         font-size: 102px;
         color: $white;
     }
+
     .icon-2 {
         font-size: 100px;
         position: absolute;
@@ -195,6 +300,7 @@
 }
 
 @media (min-width:768px) {
+
     .bg-home2,
     .bg-home3 {
         .filter-border {
@@ -231,11 +337,13 @@ body[data-layout-mode='dark'] {
     .bg-home {
         background-color: #373f4a;
     }
+
     .filter-border {
-        &::before{
+        &::before {
             border-color: $gray-dark-400;
         }
     }
+
     .registration-form .form-control {
         background-color: $gray-dark-300;
     }

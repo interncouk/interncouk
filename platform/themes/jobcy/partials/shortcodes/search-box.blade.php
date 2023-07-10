@@ -88,35 +88,27 @@
         @break
 
     @default
-        <section class="bg-home2" id="home">
+    
+        <section class="bg-home" id="home">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-7">
-                        <div class="mb-4 pb-3 me-lg-5">
-                            <span class="sub-title mb-2">{!! BaseHelper::clean($shortcode->subtitle) !!}</span>
-                            <h1 class="display-5 fw-semibold mb-3">{!! BaseHelper::clean(str_replace($shortcode->highlight_text, '<span class="text-primary fw-bold">' . $shortcode->highlight_text . '</span>', $shortcode->title)) !!}</h1>
-                            <p class="lead text-muted mb-0">{!! BaseHelper::clean($shortcode->description) !!}</p>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="text-center text-white home-title-div">
+                            <h2 class="mb-3 home-main-title">{!! BaseHelper::clean(str_replace($shortcode->highlight_text, '<span class="text-warning fw-bold">' . $shortcode->highlight_text . '</span>', $shortcode->title)) !!}</h2>
+                            <!-- <p class="fs-17">{!! BaseHelper::clean($shortcode->subtitle) !!}</p> -->
                         </div>
                         {!! Theme::partial('job-search-box') !!}
                     </div>
-                    <!--end col-->
-                    @if ($shortcode->image)
-                        <div class="col-lg-5">
-                            <div class="mt-5 mt-md-0">
-                                <img src="{{ RvMedia::getImageUrl($shortcode->image) }}" alt="process" class="home-img" />
-                            </div>
-                        </div><!--end col-->
-                    @endif
                 </div>
                 <!--end row-->
             </div>
-            <!--end container-->
+                <!--end container-->
         </section>
         @break
 @endswitch
 
 <!-- START SHAPE -->
-<div class="position-relative">
+<!-- <div class="position-relative">
     <div class="shape">
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1440" height="150" preserveAspectRatio="none" viewBox="0 0 1440 220">
             <g mask="url(&quot;#SvgjsMask1004&quot;)" fill="none">
@@ -129,5 +121,5 @@
             </defs>
         </svg>
     </div>
-</div>
+</div> -->
 <!-- END SHAPE -->

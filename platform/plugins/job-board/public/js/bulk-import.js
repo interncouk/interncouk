@@ -1,1 +1,127 @@
-(()=>{function t(e){return t="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},t(e)}function e(t,e){for(var n=0;n<e.length;n++){var o=e[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(t,r(o.key),o)}}function n(t,e,n){return(e=r(e))in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}function r(e){var n=function(e,n){if("object"!==t(e)||null===e)return e;var r=e[Symbol.toPrimitive];if(void 0!==r){var o=r.call(e,n||"default");if("object"!==t(o))return o;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===n?String:Number)(e)}(e,"string");return"symbol"===t(n)?n:String(n)}var o=function(){function t(){var e=this;!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,t),n(this,"isDownloading",!1),n(this,"$wrapper",$(".bulk-import")),this.$wrapper.on("submit","#bulk-import-form",(function(t){e.submit(t)})).on("click",".download-template",(function(t){e.download(t)}))}var r,o,a;return r=t,(o=[{key:"submit",value:function(t){t.preventDefault();var e=$(t.currentTarget),n=new FormData(e.get(0)),r=e.find("button[type=submit]"),o=this.$wrapper.find("#failures-list"),a=this.$wrapper.find(".alert");$.ajax({url:e.attr("action"),type:e.attr("method"),data:n,processData:!1,contentType:!1,dataType:"json",beforeSend:function(){r.prop("disabled",!0).addClass("button-loading"),a.hide(),o.hide(),o.find("tbody").html("")},success:function(t){if(a.show(),t.error){Botble.showError(t.message);var n="";_.map(t.data,(function(t){n+="<tr>\n                            <td>".concat(t.row,"</td>\n                            <td>").concat(t.attribute,"</td>\n                            <td>").concat(t.errors.join(", "),"</td>\n                        </tr>")})),o.show(),o.find("tbody").html(n),a.removeClass("alert-success").addClass("alert-danger").html(t.message)}else a.removeClass("alert-danger").addClass("alert-success").html(t.data.message),Botble.showSuccess(t.message);e.get(0).reset()},error:function(t){Botble.handleError(t)},complete:function(){r.prop("disabled",!1),r.removeClass("button-loading")}})}},{key:"download",value:function(t){var e=this;if(t.preventDefault(),!this.isDownloading){var n=$(t.currentTarget),r=n.data("extension"),o=n.html();$.ajax({url:n.data("url"),method:"POST",data:{extension:r},xhrFields:{responseType:"blob"},beforeSend:function(){n.html(n.data("downloading")),n.addClass("text-secondary"),e.isDownloading=!0},success:function(t){var e=document.createElement("a"),r=window.URL.createObjectURL(t);e.href=r,e.download=n.data("filename"),document.body.append(e),e.click(),e.remove(),window.URL.revokeObjectURL(r)},error:function(t){Botble.handleError(t)},complete:function(){setTimeout((function(){n.html(o),n.removeClass("text-secondary"),e.isDownloading=!1}),500)}})}}}])&&e(r.prototype,o),a&&e(r,a),Object.defineProperty(r,"prototype",{writable:!1}),t}();$((function(){return new o}))})();
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!***********************************************************************!*\
+  !*** ./platform/plugins/job-board/resources/assets/js/bulk-import.js ***!
+  \***********************************************************************/
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+var BulkImport = /*#__PURE__*/function () {
+  function BulkImport() {
+    var _this = this;
+    _classCallCheck(this, BulkImport);
+    _defineProperty(this, "isDownloading", false);
+    _defineProperty(this, "$wrapper", $('.bulk-import'));
+    this.$wrapper.on('submit', '#bulk-import-form', function (event) {
+      _this.submit(event);
+    }).on('click', '.download-template', function (event) {
+      _this.download(event);
+    });
+  }
+  _createClass(BulkImport, [{
+    key: "submit",
+    value: function submit(event) {
+      event.preventDefault();
+      var $form = $(event.currentTarget);
+      var formData = new FormData($form.get(0));
+      var $button = $form.find('button[type=submit]');
+      var $failuresList = this.$wrapper.find('#failures-list');
+      var $alert = this.$wrapper.find('.alert');
+      $.ajax({
+        url: $form.attr('action'),
+        type: $form.attr('method'),
+        data: formData,
+        processData: false,
+        contentType: false,
+        dataType: 'json',
+        beforeSend: function beforeSend() {
+          $button.prop('disabled', true).addClass('button-loading');
+          $alert.hide();
+          $failuresList.hide();
+          $failuresList.find('tbody').html('');
+        },
+        success: function success(data) {
+          $alert.show();
+          if (data.error) {
+            Botble.showError(data.message);
+            var result = '';
+            _.map(data.data, function (item) {
+              result += "<tr>\n                            <td>".concat(item.row, "</td>\n                            <td>").concat(item.attribute, "</td>\n                            <td>").concat(item.errors.join(', '), "</td>\n                        </tr>");
+            });
+            $failuresList.show();
+            $failuresList.find('tbody').html(result);
+            $alert.removeClass('alert-success').addClass('alert-danger').html(data.message);
+          } else {
+            $alert.removeClass('alert-danger').addClass('alert-success').html(data.data.message);
+            Botble.showSuccess(data.message);
+          }
+          $form.get(0).reset();
+        },
+        error: function error(data) {
+          Botble.handleError(data);
+        },
+        complete: function complete() {
+          $button.prop('disabled', false);
+          $button.removeClass('button-loading');
+        }
+      });
+    }
+  }, {
+    key: "download",
+    value: function download(event) {
+      var _this2 = this;
+      event.preventDefault();
+      if (this.isDownloading) {
+        return;
+      }
+      var $this = $(event.currentTarget);
+      var extension = $this.data('extension');
+      var $content = $this.html();
+      $.ajax({
+        url: $this.data('url'),
+        method: 'POST',
+        data: {
+          extension: extension
+        },
+        xhrFields: {
+          responseType: 'blob'
+        },
+        beforeSend: function beforeSend() {
+          $this.html($this.data('downloading'));
+          $this.addClass('text-secondary');
+          _this2.isDownloading = true;
+        },
+        success: function success(data) {
+          var anchor = document.createElement('a');
+          var url = window.URL.createObjectURL(data);
+          anchor.href = url;
+          anchor.download = $this.data('filename');
+          document.body.append(anchor);
+          anchor.click();
+          anchor.remove();
+          window.URL.revokeObjectURL(url);
+        },
+        error: function error(data) {
+          Botble.handleError(data);
+        },
+        complete: function complete() {
+          setTimeout(function () {
+            $this.html($content);
+            $this.removeClass('text-secondary');
+            _this2.isDownloading = false;
+          }, 500);
+        }
+      });
+    }
+  }]);
+  return BulkImport;
+}();
+$(function () {
+  return new BulkImport();
+});
+/******/ })()
+;

@@ -44,6 +44,31 @@
         font-size: 20px;
         padding-top: 8px;
     }
+    .job_name{
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Montserrat", sans-serif;
+    }
+    .job_description{
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+        font-size: 14px;
+        color: #727272;
+    }
+    .job-info{
+        span{
+            font-size: 12px;
+            &.salary_text{
+                float: right;
+            }
+            &.company_name{
+                color: #9777fa;
+                font-weight: bold;
+            }
+        }
+    }
 
     &:hover {
         transform: translateY(-8px);

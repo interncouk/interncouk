@@ -5,7 +5,7 @@
         <div class="container-fluid custom-container">
             <div class="row g-0 align-items-center">
                 <div class="col-md-7">
-                    <ul class="list-inline mb-0 text-center text-md-start">
+                    <ul class="list-inline d-none mb-0 text-center text-md-start">
                         @if (theme_option('hotline'))
                             <li class="list-inline-item">
                                 <p class="fs-13 mb-0">
@@ -107,7 +107,7 @@
     <!-- END TOP-BAR -->
 
     <!--Navbar Start-->
-    <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
+    <nav class="navbar navbar-expand-lg fixed-top pb-4 sticky" id="navbar">
         <div class="container-fluid custom-container">
             @if (theme_option('logo'))
                 <a class="navbar-brand text-dark fw-bold me-auto" href="{{ route('public.index') }}">
