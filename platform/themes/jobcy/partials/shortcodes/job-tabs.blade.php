@@ -51,11 +51,13 @@
                     </div>
 
                     <div class="tab-pane fade" id="recent-jobs" role="tabpanel" aria-labelledby="recent-jobs-tab">
-
-                        @foreach($recentJobs as $job)
-                            @include(Theme::getThemeNamespace('views.job-board.partials.job-item'), ['job' => $job])
-                        @endforeach
-
+                        <div class="row">
+                            @foreach($recentJobs as $job)
+                            <div class="col-lg-6">
+                                @include(Theme::getThemeNamespace('views.job-board.partials.job-item'), ['job' => $job])
+                            </div>
+                            @endforeach
+                        </div>
                         <div class="text-center mt-4 pt-2">
                             <a href="{{ JobBoardHelper::getJobsPageURL() }}" class="btn btn-primary">{{ __('View More') }} <i class="uil uil-arrow-right"></i></a>
                         </div>
@@ -63,10 +65,13 @@
                     <!--end featured-jobs-tab-->
 
                     <div class="tab-pane fade" id="popular-jobs" role="tabpanel" aria-labelledby="freelancer-tab">
-                        @foreach($popularJobs as $job)
-                            @include(Theme::getThemeNamespace('views.job-board.partials.job-item'), ['job' => $job])
-                        @endforeach
-
+                        <div class="row">
+                            @foreach($popularJobs as $job)
+                            <div class="col-lg-6">
+                                @include(Theme::getThemeNamespace('views.job-board.partials.job-item'), ['job' => $job])
+                            </div>
+                            @endforeach
+                        </div>
                         <div class="text-center mt-4 pt-2">
                             <a href="{{ JobBoardHelper::getJobsPageURL() }}" class="btn btn-primary">{{ __('View More') }} <i class="uil uil-arrow-right"></i></a>
                         </div>
