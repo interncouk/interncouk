@@ -10,8 +10,10 @@
 }
 
 .bg-home {
-    padding: 130px 0px 240px 0px;
+    padding: 130px 0px 340px 0px;
     background-color: #fff9f3;
+    border-bottom-right-radius: 100px;
+    border-bottom-left-radius: 100px;
 
     @media (max-width: 767.98px) {
         padding: 155px 0px 110px 0px;
@@ -46,7 +48,7 @@
         height: 351px;
         width: 400px;
         position: absolute;
-        bottom: -53px;
+        bottom: 40px;
         left: 40px;
         background: url(/storage/general/designer.svg) no-repeat 0px 0px;
         background-size: contain;
@@ -59,7 +61,7 @@
         height: 351px;
         width: 400px;
         position: absolute;
-        bottom: -53px;
+        bottom: 40px;
         right: 20px;
         background: url(/storage/general/working.svg) no-repeat 0px 0px;
         background-size: contain;
