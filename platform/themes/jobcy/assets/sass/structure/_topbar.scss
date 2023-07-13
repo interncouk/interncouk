@@ -46,18 +46,17 @@
     .navbar-nav {
         .nav-link {
             color: $dark;
-<<<<<<< Updated upstream
             font-size: 16px;
             background-color: transparent;
             padding: 23px 22px;
             position: relative;
             font-weight: 500;
 
-            &:hover,
-=======
-            font-size: 13px;
-            background-color: transparent;
-            padding: 23px 18px;
+            &:hover{
+                font-size: 13px;
+                background-color: transparent;
+                padding: 23px 18px;
+            }
         }
     }
 
@@ -107,37 +106,21 @@
             background-color: $light;
         }
     }
-<<<<<<< Updated upstream
-
-=======
-    
->>>>>>> Stashed changes
 }
 
 .notification-header {
     padding: 1rem;
 }
-<<<<<<< Updated upstream
 
 .notification-footer {
-=======
-.notification-footer{
->>>>>>> Stashed changes
     padding: 10px;
 }
 
 .noti-icon {
-<<<<<<< Updated upstream
     .count {
         position: absolute;
         top: 15px;
         right: -6px;
-=======
-    .count{
-        position: absolute;
-        top: 15px;
-        right: -6px;    
->>>>>>> Stashed changes
         margin-top: -3px;
         margin-right: -5px;
         width: 21px;
@@ -194,10 +177,6 @@
 
 .arrow-down {
     display: inline-block;
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
     &:after {
         border: 0;
         left: auto;
@@ -227,7 +206,6 @@
     .top-bar {
         display: none;
     }
-<<<<<<< Updated upstream
     .navbar.mobile-fixed-top {
         position: fixed;
         top: 0;
@@ -235,8 +213,6 @@
         left: 0;
         z-index: 1030;
     }
-=======
->>>>>>> Stashed changes
 }
 
 
@@ -277,11 +253,7 @@ body[data-layout-mode='dark'] {
         }
     }
 
-<<<<<<< Updated upstream
     .noti-icon .count {
-=======
-    .noti-icon .count{
->>>>>>> Stashed changes
         border-color: $gray-dark-300;
     }
 
