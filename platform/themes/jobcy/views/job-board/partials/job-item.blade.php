@@ -99,18 +99,9 @@
             <!--end col-->
             <!-- @if ($job->jobTypes->count())
                 <div class="col-md-2">
-                    <div class="text-md-end">
-                        @foreach($job->jobTypes as $jobType)
-                            <span class="badge bg-soft-danger fs-13 mt-1 text-wrap text-break">{{ $jobType->name }}@if (!$loop->last), @endif</span>
-                        @endforeach
-                    </div>
                 </div>
             @endif -->
-            <!--end col-->
         </div>
-        <!--end row-->
-    </div>
-    <div class="p-3 bg-light">
         <div class="row">
             <div class="col-md-10">
                 <div class="d-flex">

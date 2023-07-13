@@ -229,7 +229,6 @@
     padding: 210px 0 95px 0;
     background-color: rgba($primaryRgb, 0.1);
     overflow-x: clip;
-
     @media (max-width: 767.98px) {
         padding: 160px 0 90px 0;
     }
@@ -248,13 +247,11 @@
             bottom: 0;
             left: 0;
             right: 0;
-
             .slide-para {
                 font-family: $font-family-secondary;
             }
         }
     }
-
     @media (min-width:992px) {
         width: 200%;
 
@@ -291,7 +288,6 @@
         font-size: 102px;
         color: $white;
     }
-
     .icon-2 {
         font-size: 100px;
         position: absolute;
@@ -302,7 +298,6 @@
 }
 
 @media (min-width:768px) {
-
     .bg-home2,
     .bg-home3 {
         .filter-border {
