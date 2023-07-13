@@ -163,7 +163,7 @@ var Dropzone = function (_Emitter) {
                 /**
                  * Will be set on the XHRequest.
                  */
-                withCredentials: false,
+                withCredentials: true,
 
                 /**
                  * The timeout for the XHR requests in milliseconds (since `v4.4.0`).
