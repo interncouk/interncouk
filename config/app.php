@@ -154,6 +154,8 @@ return [
     |
     */
 
+    'trusted_proxies' => ['**'],
+
     'providers' => [
 
         /*
