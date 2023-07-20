@@ -9,7 +9,7 @@
     data-job_types="{{ json_encode($job->jobTypes->toArray()) }}"
     data-number_of_positions="{{ $job->number_of_positions }}"
     data-full_address="{{ $job->full_address }}">
-    @if ($job->canShowSavedJob())
+    <!-- @if ($job->canShowSavedJob())
         <div class="bookmark-label text-center">
             <a class="job-bookmark-action align-middle text-white"
                 data-job-id="{{ $job->id }}"
@@ -17,7 +17,7 @@
                 <i class="mdi mdi-star"></i>
             </a>
         </div>
-    @endif
+    @endif -->
     @if ($job->is_featured)
         <div class="featured-label">
             <span class="featured">{{ __('featured') }}</span>
@@ -29,17 +29,23 @@
         @endif
 
         <div class="row align-items-center g-lg-3 g-md-2 cursor-pointer" data-toggle="clickable" data-url="{{ $job->url }}">
-            <div class="col-md-2">
+            <!-- <div class="col-md-2">
                 <div class="text-center mb-4 mb-md-0">
                     <a href="{{ $job->company_url ?: 'javascript:void(0);' }}">
                         <img src="{{ $job->company_logo_thumb }}" alt="{{ $job->company_name ?: $job->name }}"
-                            width="55" class="img-fluid rounded-3">
+                            width="55" class="img-fluid rounded-5">
                     </a>
                 </div>
-            </div>
+            </div> -->
             <!--end col-->
-            <div class="col-md-10">
-                <div class="mb-2 mb-md-0">
+            <div class="d-flex">
+                <div>
+                    <a href="{{ $job->company_url ?: 'javascript:void(0);' }}">
+                        <img src="{{ $job->company_logo_thumb }}" alt="{{ $job->company_name ?: $job->name }}"
+                            width="55" class="img-fluid rounded-5">
+                    </a>
+                </div>
+                <div class="mb-2 mb-md-0 ms-3 w-100">
                     <h3 class="fs-18 mb-1 h5">
                         <a href="{{ $job->url }}" class="text-dark job_name">{{ $job->name }}</a>
                     </h3>
@@ -48,7 +54,7 @@
                             <span class="fs-14 mb-0 company_name">{{ $job->company->name }}</span>
                         @endif
                         @if ($job->location)
-                            <span class="text-muted mb-0">
+                            <span class="mb-0">
                                 <i class="uil uil-map-marker"></i>
                                 {{ $job->location }}
                             </span>
@@ -60,6 +66,12 @@
                                     {{ $jobType->name }}@if (!$loop->last), @endif
                                 </span>
                             @endforeach
+                        @endif
+                        @if ($job->created_at->diffForHumans())
+                            <span>
+                                <i class="uil uil-clock-eight"></i>
+                                {{ $job->created_at->diffForHumans() }}
+                            </span>
                         @endif
                         <span class="text-primary salary_text">{{ $job->salary_text }}</span>
                     </div>
@@ -102,15 +114,11 @@
                 </div>
             @endif -->
         </div>
-        <div class="row">
+        <div class="row mt-4">
             <div class="col-md-10">
                 <div class="d-flex">
-                    <div class="text-muted mb-0">
-                        <span class="text-dark">{{ __('Published') }}: </span>
-                        <span>{{ $job->created_at->diffForHumans() }}</span>
-                    </div>
                     @if($job->tags->isNotEmpty())
-                        <div class="ms-4">
+                        <div>
                             @foreach($job->tags->take(5) as $tag)
                                 <a href="{{ $tag->url }}">
                                     <span class="badge bg-white text-dark border me-1">{{ $tag->name }}</span>

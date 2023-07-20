@@ -1,40 +1,26 @@
-<section class="section">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <div class="section-title me-5">
-                    <h2 class="title">{!! BaseHelper::clean($shortcode->title) !!}</h2>
-                    <p class="text-muted">{!! BaseHelper::clean($shortcode->subtitle) !!}</p>
-                    <div class="process-menu nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        @for($i = 1; $i <= 5; $i++)
-                            @if ($shortcode->{'step_' . $i . '_title'} && $shortcode->{'step_' . $i . '_description'})
-                                <a class="nav-link @if ($i == 1) active @endif" id="v-pills-home-tab-{{ $i }}" data-bs-toggle="pill" href="#v-pills-home-{{ $i }}" role="tab" aria-controls="v-pills-home-{{ $i }}" aria-selected="true">
-                                    <div class="d-flex">
-                                        <div class="number flex-shrink-0">
-                                            {{ $i }}
-                                        </div>
-                                        <div class="flex-grow-1 text-start ms-3">
-                                            <h5 class="fs-18">{!! BaseHelper::clean($shortcode->{'step_' . $i . '_title'}) !!}</h5>
-                                            <p class="text-muted mb-0">{!! BaseHelper::clean($shortcode->{'step_' . $i . '_description'}) !!}</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            @endif
-                        @endfor
+<section class="section bg-light">
+    <div class="job-container">
+        <div class="block-job-bg block-job-bg-homepage-2">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12 d-none d-md-block">
+                    <div class="box-image-findjob findjob-homepage-2 ml-0 wow animate__animated animate__fadeIn">
+                        <figure><img alt="jobhub" class="mw-100" src="{{asset('storage/general/img-findjob.png') }}" /></figure>
                     </div>
                 </div>
-            </div><!--end col-->
-            <div class="col-lg-6">
-                <div class="tab-content" id="v-pills-tabContent">
-                    @for($i = 1; $i <= 5; $i++)
-                        @if ($shortcode->{'step_' . $i . '_image'})
-                            <div class="tab-pane fade @if ($i == 1) show active @endif" id="v-pills-home-{{ $i }}" role="tabpanel" aria-labelledby="v-pills-home-tab-{{ $i }}">
-                                <img src="{{ RvMedia::getImageUrl($shortcode->{'step_' . $i . '_image'})  }}" alt="image" class="img-fluid">
-                            </div>
-                        @endif
-                    @endfor
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="box-info-job pl-90 pt-30 pr-90">
+                        <span class="text-blue wow animate__animated animate__fadeInUp">Find jobs</span>
+                        <h5 class="heading-36 mb-30 mt-30 wow animate__animated animate__fadeInUp">Create free count and start apply your dream job today</h5>
+                        <p class="text-lg wow animate__animated animate__fadeInUp">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is
+                            simply dummy.
+                        </p>
+                        <div class="box-button-shadow mt-30 wow animate__animated animate__fadeInUp">
+                            <a href="/jobs" class="btn btn-default">Explore more</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div> <!--end row-->
+        </div>
     </div><!--end container-->
 </section>

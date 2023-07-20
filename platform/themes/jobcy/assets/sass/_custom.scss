@@ -230,6 +230,17 @@ body.show-admin-bar {
     }
 }
 
+.job-tabs-container{
+    margin:0  87px;
+    .job-tabs-title{
+        font-size: 55px;
+        line-height: 67px;
+        color: #1f2938;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+    }
+}
+
 .job-detail .job-detail-content, .section .blog-post .post-content {
     img {
         max-width: 100%;
@@ -568,6 +579,149 @@ body.show-admin-bar {
     width: 32px;
 }
 
+ // How-It-work section.
+
+.job-container{
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+
+    .block-job-bg {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        padding: 65px 0px 0px 20px;
+        
+        .box-info-job{
+            display: inline-block;
+            width: 100%;
+            padding: 70px 30px 0px 30px;
+            padding: 30px 90px 0px 90px;
+            
+            .text-blue{
+                font-family: "Montserrat", sans-serif;
+                font-size: 20px;
+                color: #5192ff;
+                font-weight: 600;
+                line-height: 24px;
+                visibility: visible;
+                animation-name: fadeInUp;
+            }
+            .heading-36{
+                font-family: "Montserrat", sans-serif;
+                font-size: 36px;
+                line-height: 44px;
+                font-weight: bold;
+                margin: 30px 0px 30px 0px;
+                color: #1f2938;
+            }
+            .text-lg{
+                font-size: 18px;
+                line-height: 28px;
+                letter-spacing: 0.5px;
+                color: #37404e;
+                margin: 0!important
+            }
+            .box-button-shadow{
+                position: relative;
+                display: inline-block;
+                margin-top: 30px;
+
+                &::before{
+                    background: #9777fa;
+                    filter: blur(20px);
+                    border-radius: 10px;
+                    content: "";
+                    position: absolute;
+                    width: 144px;
+                    height: 39px;
+                    z-index: 1;
+                    left: 0px;
+                    right: 0px;
+                    top: 10px;
+                    margin: auto;
+                }
+                .btn.btn-default{
+                    color: #ffffff;
+                    background-color: #9777fa;
+                    position: relative;
+                    z-index: 12;
+
+                    &:hover{
+                        background-color: #6d4bd3;
+                        transform: translateY(-2px);
+                        transition: 0.2s;
+                    }
+                }
+                .btn {
+                    font-family: "Open Sans", sans-serif;
+                    border-radius: 10px;
+                    padding: 14px 25px;
+                    font-size: 18px;
+                    line-height: 1;
+                    transition: 0.2s;
+                }
+            }
+        }
+
+        &::before{            
+            content: "";
+            position: absolute;
+            top: 0px;
+            right: -50px;
+            height: 84%;
+            width: 88%;
+            background: rgba(81, 146, 255, 0.3) url(/storage/general/bg-inner-job.svg) no-repeat;
+            background-size: cover;
+            border-radius: 80px;
+            z-index: 0;
+        }
+
+        &::after{
+            content: "";
+            position: absolute;
+            top: 10px;
+            right: 81%;
+            height: 39px;
+            width: 39px;
+            background: #bee2ae;
+            border-radius: 50%;
+            z-index: 0;
+        }
+    }
+}
+
+@media (min-width: 576px){
+    .job-container {
+        max-width: 540px;
+    }
+}
+
+
+@media (min-width: 768px){
+    .job-container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px){
+    .job-container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px){
+    .job-container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px){
+    .job-container {
+        max-width: 1344px;
+    }
+}
 
 .item-timeline {
     display: flex;
@@ -622,7 +776,11 @@ body.show-admin-bar {
         }
     }
 }
-
+.box-image-findjob img {
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    box-shadow: 0px 20px 60px -6px rgba(0, 0, 0, 0.04);
+}
 .btn.btn-editor {
     background-image: url('../images/btn-edit.svg');
     position: unset;

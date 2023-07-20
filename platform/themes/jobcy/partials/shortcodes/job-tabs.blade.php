@@ -1,9 +1,9 @@
 <section class="section bg-light">
-    <div class="container">
+    <div class="job-tabs-container">
         <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="section-title text-center mb-4 pb-2">
-                    <h4 class="title">{!! BaseHelper::clean($shortcode->title) !!}</h4>
+            <div class="col-lg-8">
+                <div class="section-title  text-center mb-4 pb-2">
+                    <h4 class="job-tabs-title">{!! BaseHelper::clean($shortcode->title) !!}</h4>
                     <p class="text-muted mb-1">{!! BaseHelper::clean($shortcode->subtitle) !!}</p>
                 </div>
             </div><!--end col-->
@@ -44,9 +44,9 @@
                             </div>
                             @endforeach
                         </div>
-                        <div class="text-center mt-4 pt-2">
+                        <!-- <div class="text-center mt-4 pt-2">
                             <a href="{{ JobBoardHelper::getJobsPageURL() }}" class="btn btn-primary">{{ __('View More') }} <i class="uil uil-arrow-right"></i></a>
-                        </div>
+                        </div> -->
 
                     </div>
 
@@ -58,9 +58,9 @@
                             </div>
                             @endforeach
                         </div>
-                        <div class="text-center mt-4 pt-2">
+                        <!-- <div class="text-center mt-4 pt-2">
                             <a href="{{ JobBoardHelper::getJobsPageURL() }}" class="btn btn-primary">{{ __('View More') }} <i class="uil uil-arrow-right"></i></a>
-                        </div>
+                        </div> -->
                     </div>
                     <!--end featured-jobs-tab-->
 
@@ -72,9 +72,9 @@
                             </div>
                             @endforeach
                         </div>
-                        <div class="text-center mt-4 pt-2">
+                        <!-- <div class="text-center mt-4 pt-2">
                             <a href="{{ JobBoardHelper::getJobsPageURL() }}" class="btn btn-primary">{{ __('View More') }} <i class="uil uil-arrow-right"></i></a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

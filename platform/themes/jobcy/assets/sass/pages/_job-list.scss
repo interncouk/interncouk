@@ -48,6 +48,10 @@
         font-size: 18px;
         font-weight: bold;
         font-family: "Montserrat", sans-serif;
+        &:hover{
+            color:#9777fa!important;
+            transition: all 0.3s ease 0s;
+        }
     }
     .job_description{
         -webkit-line-clamp: 2;
@@ -60,6 +64,8 @@
     .job-info{
         span{
             font-size: 12px;
+            color: #88929b;
+            padding-right: 15px;
             &.salary_text{
                 float: right;
             }
