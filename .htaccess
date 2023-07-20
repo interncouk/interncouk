@@ -1,10 +1,13 @@
-# RewriteEngine on
 
-# # Redirect Trailing Slashes If Not A Folder...
-# RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteCond %{REQUEST_URI} (.+)/$
-# RewriteRule ^ %1 [L,R=301]
+# <IfModule mod_rewrite.c>
+#     RewriteEngine on
 
-# RewriteCond %{REQUEST_URI} !^public
+#     # Redirect Trailing Slashes If Not A Folder...
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteCond %{REQUEST_URI} (.+)/$
+#     RewriteRule ^ %1 [L,R=301]
 
-# RewriteRule ^(.*)$ public/$1 [L]
+#     RewriteCond %{REQUEST_URI} !^public
+
+#     RewriteRule ^(.*)$ public/$1 [L]
+# </IfModule>
