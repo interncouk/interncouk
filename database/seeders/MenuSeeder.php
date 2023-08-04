@@ -37,22 +37,6 @@ class MenuSeeder extends BaseSeeder
                         [
                             'title' => 'Home',
                             'url' => '/',
-                            'children' => [
-                                [
-                                    'title' => 'Homepage',
-                                    'url' => '/',
-                                ],
-                                [
-                                    'title' => 'Homepage 2',
-                                    'reference_id' => 13,
-                                    'reference_type' => Page::class,
-                                ],
-                                [
-                                    'title' => 'Homepage 3',
-                                    'reference_id' => 14,
-                                    'reference_type' => Page::class,
-                                ],
-                            ],
                         ],
                         [
                             'title' => 'Jobs',

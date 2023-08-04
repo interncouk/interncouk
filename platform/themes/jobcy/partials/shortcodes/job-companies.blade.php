@@ -1,6 +1,6 @@
 <!-- START COMPANY-LIST -->
 <section class="section">
-    <div class="container">
+    <div class="theme-container">
         <div class="row align-items-center mb-4">
             <div class="col-lg-7">
                 <div class="mb-3 mb-lg-0">

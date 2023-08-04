@@ -6,7 +6,7 @@
             {!! Theme::partial('page-header') !!}
         @endif
         <section class="section static-layout-page">
-            <div class="container">
+            <div class="theme-container">
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
                         {!! Theme::content() !!}

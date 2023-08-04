@@ -43,7 +43,7 @@ Vue.directive('swiper', {
                 clickable: true,
             },
             autoplay: {
-                delay: 2500,
+                delay: 5500,
                 disableOnInteraction: false,
             },
             breakpoints: {
@@ -52,8 +52,8 @@ Vue.directive('swiper', {
                     spaceBetween: 10,
                 },
                 992: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
+                    slidesPerView: 3,
+                    spaceBetween: 30,
                 }
             }
         });

@@ -1,5 +1,5 @@
 <section class="section">
-    <div class="container">
+    <div class="theme-container">
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="text-center mb-5">

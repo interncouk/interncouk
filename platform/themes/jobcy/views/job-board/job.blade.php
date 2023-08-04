@@ -6,32 +6,32 @@
 
 <!-- START JOB-DETAILS -->
 <section class="section">
-    <div class="container">
+    <div class="theme-container">
         <div class="row">
             <div class="col-lg-8">
-                <div class="card job-detail overflow-hidden">
+                <div class="job-detail overflow-hidden">
                     @if(!$job->hide_company && $company->id)
                         <div>
-                            <img src="{{ $company->cover_image_url }}" alt="cover" class="img-fluid">
-                            <div class="job-details-company-profile">
+                            <img src="{{ $company->cover_image_url }}" alt="cover" class="img-fluid company-inner-image">
+                            <!-- <div class="job-details-company-profile">
                                 <img src="{{ $company->logo_thumb }}" alt="logo" width="55" class="img-fluid rounded-3 rounded-3">
-                            </div>
+                            </div> -->
                         </div>
                     @else
                         <div>
                             <img src="{{ RvMedia::getImageUrl(theme_option('default_company_cover_image'), null, false, RvMedia::getDefaultImage()) }}"
-                                alt="cover" class="img-fluid">
+                                alt="cover" class="img-fluid company-inner-image">
                             @if ($companyLogo = theme_option('default_company_logo', theme_option('logo')))
-                                <div class="job-details-company-profile">
+                                <!-- <div class="job-details-company-profile">
                                     <img src="{{ RvMedia::getImageUrl($companyLogo) }}" alt="logo" width="55" class="img-fluid rounded-3 rounded-3">
-                                </div>
+                                </div> -->
                             @endif
                         </div>
                     @endif
-                    <div class="card-body p-4">
+                    <div class="card-body">
                         <div>
-                            <div class="row">
-                                <div class="col-md-8">
+                            <div class="row pt-3">
+                                <div class="col-md-10">
                                     <p class="mb-1 h5">{{ $job->name }}</p>
                                     <ul class="list-inline text-muted mb-0">
                                         <li class="list-inline-item">
@@ -44,9 +44,8 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <!--end col-->
                                 @if ($job->canShowSavedJob())
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-2">
                                         <ul class="list-inline mb-0 text-lg-end mt-3 mt-lg-0">
                                             <li class="list-inline-item @if ($job->is_saved) bookmark-post @endif">
                                                 <div class="favorite-icon">
@@ -59,13 +58,12 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <!--end col-->
                                 @endif
                             </div>
-                            <!--end row-->
+    
                         </div>
 
-                        <div class="mt-4">
+                        <!-- <div class="mt-4">
                             <div class="row g-2">
                                 @if ($job->jobExperience->name)
                                     <div class="col-lg-6">
@@ -111,11 +109,11 @@
                                     </div>
                                 @endforeach
                             </div>
-                        </div>
+                        </div> -->
                         <!--end Experience-->
 
                         <div class="mt-4">
-                            <h5 class="mb-3">{{ __('Job Description') }}</h5>
+                            <h5 class="mb-3 job-content-title pt-4">{{ __('Job Description') }}</h5>
                             <div class="job-detail-desc">
                                 <p class="text-muted mb-0">
                                     {{ $job->description }}
@@ -129,7 +127,7 @@
 
                         @if ($job->skills->count() > 0)
                             <div class="mt-4">
-                                <h5 class="mb-3">{{ __('Skills') }}</h5>
+                                <h5 class="mb-3 job-content-title">{{ __('Skills') }}</h5>
                                 <div class="job-details-desc">
                                     <div class="mt-4">
                                         @foreach ($job->skills as $skill)
@@ -142,7 +140,7 @@
 
                         @if ($job->tags->count() > 0)
                             <div class="mt-4">
-                                <h5 class="mb-3">{{ __('Tags') }}</h5>
+                                <h5 class="mb-3 job-content-title">{{ __('Tags') }}</h5>
                                 <div class="job-details-desc">
                                     <div class="mt-4">
                                         @foreach ($job->tags as $tag)

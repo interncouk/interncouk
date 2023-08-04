@@ -7,7 +7,7 @@
 
             <!-- START FOOTER -->
             <section class="bg-footer">
-                <div class="container">
+                <div class="theme-container">
                     <div class="row">
                         {!! dynamic_sidebar('footer_sidebar') !!}
                     </div><!--end row-->
@@ -16,11 +16,11 @@
             <!-- END FOOTER -->
 
             <!-- START FOOTER-ALT -->
-            <div class="footer-alt">
-                <div class="container">
+            <div class="footer-alt theme-container">
+                <div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <p class="text-white-50 text-center mb-0">
+                            <p class="text-left mb-0">
                                 {!! BaseHelper::clean(theme_option('copyright')) !!}
                             </p>
                         </div><!--end col-->

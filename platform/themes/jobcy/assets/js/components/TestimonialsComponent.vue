@@ -1,5 +1,5 @@
 <template>
-    <div class="col-lg-10">
+    <div class="col-lg-12">
         <div v-if="isLoading">
             <div class="half-circle-spinner">
                 <div class="circle circle-1"></div>
@@ -11,12 +11,12 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide" v-for="item in data">
                     <div class="card testimonial-box">
-                        <div class="card-body">
+                        <div class="card-body hover-up">
                             <div class="mb-4">
-                                <img :src="item.image" :alt="item.name" height="50" />
+                                <img :src="item.image" :alt="item.name" height="100" />
                             </div>
                             <p class="testimonial-content lead text-muted mb-4" v-html="item.content"></p>
-                            <h5 class="mb-0">{{ item.name }}</h5>
+                            <h5 class="mb-0 mt-5">{{ item.name }}</h5>
                             <p class="text-muted mb-0">{{ item.company }}</p>
                         </div>
                     </div>

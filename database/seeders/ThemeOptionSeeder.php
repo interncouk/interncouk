@@ -23,7 +23,7 @@ class ThemeOptionSeeder extends BaseSeeder
             'en_US' => [
                 'site_title' => 'Jobcy - Laravel Job Board Script',
                 'seo_description' => 'Jobcy – is a modern job board Laravel script designed to connect people looking for a job with work hunting employers. This script represents simple design to help build the website for advertising vacancies, finding suitable staff, receiving employer’s resumes and CV',
-                'copyright' => '©' . Carbon::now()->format('Y') . ' Botble Technologies. All right reserved.',
+                'copyright' => '©' . Carbon::now()->format('Y') . ' Jobhub. All right reserved.',
                 'favicon' => 'general/favicon.png',
                 'logo' => 'general/logo.png',
                 'hotline' => '+(123) 345-6789',

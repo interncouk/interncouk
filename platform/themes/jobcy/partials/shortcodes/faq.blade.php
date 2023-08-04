@@ -1,6 +1,6 @@
 <!-- START FAQ-PAGE -->
 <section class="section">
-    <div class="container">
+    <div class="theme-container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <ul class="faq-menu nav nav-fill nav-pills justify-content-center" id="pills-tab" role="tablist">

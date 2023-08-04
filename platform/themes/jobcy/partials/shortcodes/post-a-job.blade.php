@@ -1,4 +1,4 @@
-<section class="section bg-light">
+<!-- <section class="section bg-light">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-7">
@@ -9,7 +9,8 @@
                         <a href="{{ auth('account')->check() ? route('public.account.jobs.create') : route('public.account.register') }}" class="btn btn-primary btn-hover">{{ $shortcode->button_text ?: __('Started Now') }} <i class="uil uil-rocket align-middle ms-1"></i></a>
                     </div>
                 </div>
-            </div><!--end col-->
-        </div><!--end row-->
-    </div><!--end container-->
-</section>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!--end container-->

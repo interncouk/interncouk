@@ -38,7 +38,7 @@
                 </div>
             </div> -->
             <!--end col-->
-            <div class="d-flex">
+            <div class="d-flex job__item__header">
                 <div>
                     <a href="{{ $job->company_url ?: 'javascript:void(0);' }}">
                         <img src="{{ $job->company_logo_thumb }}" alt="{{ $job->company_name ?: $job->name }}"

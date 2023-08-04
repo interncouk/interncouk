@@ -27,8 +27,11 @@
                     <a :href="item.url" class="primary-link">
                         <h5 class="fs-17">{{ item.name }}</h5>
                     </a>
-                    <p class="text-muted">{{ item.description }}</p>
-                    <a :href="item.url" class="form-text text-primary">{{ __('Read more') }} <i class="mdi mdi-chevron-right align-middle"></i></a>
+                    <p class="text-muted blog__description">{{ item.description }}</p>
+                    <div class="d-flex w-100">
+                        <a :href="item.url" class="btn btn-border btn-brand-hover">{{ __('Keep reading') }} </a>
+                        <i class="mdi mdi-bookmark-outline align-items-center d-flex ms-auto fs-4 text-black-50"></i>
+                    </div>
                 </div>
             </div><!--end blog-box-->
         </div><!--end col-->

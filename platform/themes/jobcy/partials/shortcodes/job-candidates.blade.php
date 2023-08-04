@@ -1,5 +1,5 @@
 <section class="section">
-    <div class="container">
+    <div class="theme-container">
         <div class="row align-items-center job-candidates-wrapper">
             <div class="col-lg-7">
                 <div>
@@ -61,26 +61,26 @@
                                                 <span class="featured">{{ __('featured') }}</span>
                                             </div>
                                         @endif
-                                        <div class="d-flex mb-4">
-                                            <div class="flex-shrink-0 position-relative">
-                                                <img src="{{ $candidate->avatar_url }}" alt="{{ $candidate->name }}" class="avatar-md rounded">
+                                        <div class="d-mb-4">
+                                            <div class="flex-shrink-0 position-relative d-flex justify-content-center">
+                                                <img src="{{ $candidate->avatar_url }}" alt="{{ $candidate->name }}" class="avatar-md candidate-avatar">
                                             </div>
-                                            <div class="ms-3">
+                                            <div class="ms-3 text-center pt-3">
                                                 <a href="{{ $candidate->url }}" class="primary-link">
                                                     <h5 class="fs-17">{{ $candidate->name }}</h5>
                                                 </a>
                                             </div>
                                         </div>
-                                        <p class="text-muted candidate-description">{!! Str::limit(BaseHelper::clean($candidate->description), 80) !!}</p>
+                                        <p class="text-muted candidate-description text-center">{!! Str::limit(BaseHelper::clean($candidate->description), 80) !!}</p>
                                         @if ($candidate->address)
-                                            <ul class="list-inline mb-0 text-muted">
+                                            <ul class="list-inline mb-0 text-muted text-center">
                                                 <li class="list-inline-item">
                                                     <i class="mdi mdi-map-marker"></i> <span>{{ Str::limit($candidate->address, 35) }}</span>
                                                 </li>
                                             </ul>
                                         @endif
-                                        <div class="mt-3">
-                                            <a href="{{ $candidate->url }}" class="btn btn-soft-primary btn-hover w-100 mt-2">
+                                        <div class="mt-3 d-flex justify-content-center">
+                                            <a href="{{ $candidate->url }}" class="btn border border-2  pt-3 btn-hover mt-2">
                                                 <i class="mdi mdi-eye"></i>
                                                 <span>{{ __('View Profile') }}</span>
                                             </a>
@@ -100,7 +100,7 @@
                                     <div class="col-auto">
                                         <div class="candidate-list-images">
                                             <a href="{{ $candidate->url }}">
-                                                <img src="{{ $candidate->avatar_url }}" alt="{{ $candidate->name }}" class="avatar-md img-thumbnail rounded-circle">
+                                                <img src="{{ $candidate->avatar_url }}" alt="{{ $candidate->name }}" class="avatar-md candidate-avatar img-thumbnail rounded-circle">
                                             </a>
                                         </div>
                                     </div><!--end col-->

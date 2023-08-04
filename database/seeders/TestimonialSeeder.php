@@ -17,16 +17,16 @@ class TestimonialSeeder extends BaseSeeder
 
         $testimonials = [
             [
-                'name' => 'Jeffrey Montgomery',
-                'company' => 'Product Manager',
+                'name' => 'Katy Perry',
+                'company' => 'Visual Designer',
             ],
             [
-                'name' => 'Rebecca Swartz',
-                'company' => 'Creative Designer',
+                'name' => 'Justin Bieber',
+                'company' => 'Visual Designer',
             ],
             [
-                'name' => 'Charles Dickens',
-                'company' => 'Store Assistant',
+                'name' => '"Chris Brown',
+                'company' => 'Visual Designer',
             ],
         ];
 
@@ -38,7 +38,7 @@ class TestimonialSeeder extends BaseSeeder
 
         foreach ($testimonials as $index => $item) {
             $item['image'] = 'testimonials/' . ($index + 1) . '.png';
-            $item['content'] = 'Very well thought out and articulate communication. Clear milestones, deadlines and fast work. Patience. Infinite patience. No shortcuts. Even if the client is being careless.';
+            $item['content'] = 'We are on the hunt for a designer who is exceptional in both making incredible product interfaces as well as';
 
             Testimonial::query()->create($item);
         }

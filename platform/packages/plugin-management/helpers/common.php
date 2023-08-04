@@ -2,6 +2,7 @@
 
 use Botble\Base\Facades\BaseHelper;
 use Illuminate\Support\Facades\File;
+use Illuminate\Http\Request;
 
 if (! function_exists('plugin_path')) {
     function plugin_path(string|null $path = null): string
@@ -16,6 +17,14 @@ if (! function_exists('is_plugin_active')) {
         return in_array($alias, get_active_plugins());
     }
 }
+
+if (!function_exists('is_current_path')) {
+    function is_current_path(string $path): bool
+    {
+        return request()->is($path);
+    }
+}
+
 
 if (! function_exists('get_active_plugins')) {
     function get_active_plugins(): array

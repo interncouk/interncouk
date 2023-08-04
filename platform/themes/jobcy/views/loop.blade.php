@@ -1,6 +1,6 @@
 <!-- START BLOG-GRID -->
 <section class="section">
-    <div class="container">
+    <div class="theme-container">
         <div class="row">
             <div class="col-lg-8 col-md-7">
                 <div class="blog-post">

@@ -1,6 +1,6 @@
 <div class="job-list-header">
     {!! Form::open(['url' => JobBoardHelper::getJobsPageURL(), 'method' => 'GET', 'id' => 'jobs-filter-form', 'data-ajax-url' => route('public.ajax.jobs')]) !!}
-    <div class="row g-2">
+    <div class="row g-2 filter-job-form-wrapper">
         <div class="col-lg-3 col-md-6">
             <div class="filler-job-form">
                 <i class="uil uil-briefcase-alt"></i>
@@ -45,16 +45,16 @@
         </div>
         <!--end col-->
         <div class="col-lg-3 col-md-6">
-            <div class="row g-1">
+            <div class="row g-1 my-auto mx-3">
                 <div class="col-6">
-                    <button type="submit" class="btn btn-primary w-100 px-2 d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary w-100 px-2 d-flex justify-content-center rounded-pill">
                         <i class="uil uil-filter"></i>&nbsp;
                         <span>{{ __('Filter') }}</span>
                     </button>
                 </div>
                 <!--end col-->
                 <div class="col-6">
-                    <button class="btn btn-success w-100 px-2 d-flex justify-content-center" type="button" data-bs-toggle="offcanvas"
+                    <button class="btn btn-success w-100 px-2 d-flex justify-content-center rounded-pill" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#advanced-filters-right" aria-controls="advanced-filters-right">
                         <i class="uil uil-cog"></i>&nbsp;
                         <span>{{ __('Advanced') }}</span>

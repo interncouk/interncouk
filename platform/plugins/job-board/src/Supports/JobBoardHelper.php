@@ -28,7 +28,7 @@ class JobBoardHelper
     protected string|null $jobsPageURL = null;
 
     protected string|null $jobCategoriesPageURL = null;
-
+    
     protected string|null $jobCandidatesPageURL = null;
 
     protected string|null $jobCompaniesPageURL = null;
@@ -336,17 +336,17 @@ class JobBoardHelper
             $candidates = $candidates->whereNotNull('confirmed_at');
         }
 
-        if ($keyword = $data['keyword']) {
-            if (strlen($keyword) === 1) {
-                $candidates = $candidates->where('first_name', 'LIKE', $keyword . '%');
-            } else {
-                $candidates = $candidates->where(function (BaseQueryBuilder $query) use ($keyword) {
-                    $query
-                        ->addSearch('first_name', $keyword, false, false)
-                        ->addSearch('last_name', $keyword, false);
-                });
-            }
-        }
+        // if ($keyword = $data['keyword']) {
+        //     if (strlen($keyword) === 1) {
+        //         $candidates = $candidates->where('first_name', 'LIKE', $keyword . '%');
+        //     } else {
+        //         $candidates = $candidates->where(function (BaseQueryBuilder $query) use ($keyword) {
+        //             $query
+        //                 ->addSearch('first_name', $keyword, false, false)
+        //                 ->addSearch('last_name', $keyword, false);
+        //         });
+        //     }
+        // }
 
         if (self::isEnabledReview()) {
             $candidates = $candidates

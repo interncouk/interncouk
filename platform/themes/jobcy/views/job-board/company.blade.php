@@ -7,7 +7,7 @@
 @endphp
 
 <section class="section">
-    <div class="container">
+    <div class="theme-container">
         <div class="row">
             <div class="col-lg-4">
                 <div class="card side-bar">

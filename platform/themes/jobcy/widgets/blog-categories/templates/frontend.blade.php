@@ -4,15 +4,15 @@
             ->advancedGet([
                 'condition' => [
                     'status' => \Botble\Base\Enums\BaseStatusEnum::PUBLISHED
-                ],
+            ],
                 'take'      => (int)$config['number_display'] ?: 10,
                 'with'      => ['slugable'],
             ]);
     @endphp
     @if ($categories->count())
-        <div class="mt-4 pt-2">
+        <div class="mt-4 pt-2 widget-categories">
             <div class="sd-title">
-                <h6 class="fs-16 mb-3">{!! BaseHelper::clean($config['name'] ?: __('Categories')) !!}</h6>
+                <h6 class="fs-16 mb-3 blog_catetory">{!! BaseHelper::clean($config['name'] ?: __('Categories')) !!}</h6>
             </div>
             <div class="my-3">
                 @foreach ($categories as $category)

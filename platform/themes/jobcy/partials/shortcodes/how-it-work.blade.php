@@ -1,5 +1,5 @@
-<section class="section bg-light">
-    <div class="job-container">
+<section class="section bg-theme">
+    <div class="job-container theme-container">
         <div class="block-job-bg block-job-bg-homepage-2">
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12 col-12 d-none d-md-block">

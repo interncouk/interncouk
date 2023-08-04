@@ -1,6 +1,6 @@
 <!-- START CONTACT-PAGE -->
 <section class="section">
-    <div class="container">
+    <div class="theme-container">
         <div class="row align-items-center mt-5">
             <div class="col-lg-6">
                 <div class="section-title mt-4 mt-lg-0">

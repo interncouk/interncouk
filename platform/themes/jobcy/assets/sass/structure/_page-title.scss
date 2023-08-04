@@ -4,11 +4,42 @@
 
 .page-title-box {
     background-size: cover;
-    background-color: #{rgba($primaryRgb, 0.95)};
+    background-color: #FFF9F3;
     position: relative;
-    padding-top: 225px;
-    padding-bottom: 110px;
+    padding-top: 185px;
+    padding-bottom: 60px;
     background-position: center;
+    color: #37404e;
+
+    .page-title-wrapper {
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            z-index: 1;
+            width: 100px;
+            background: url(/storage/general/bg-head-left-candidate.svg) no-repeat right bottom;
+        }
+        &::after {
+            z-index: 1;
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            height: 100%;
+            width: 543px;
+            background: url(/storage/general/bg-header-right.svg) no-repeat right bottom;
+        }
+    }
+
+    .current-page-title{
+        font-size: 44px;
+        line-height: 54px;
+        padding-left:7px;
+        margin-bottom: 15px;
+    }
 }
 
 .shape {
@@ -27,16 +58,20 @@
 .breadcrumb {
     letter-spacing: 0.5px;
     text-align: center;
+    color: #88929b;
+    font-size: 16px;
 
     .breadcrumb-item {
         text-transform: uppercase;
-        font-size: 13px;
-        font-weight: 600;
+        font-weight: 450;
+        font-size: 16px;
+        color: #88929b;
+        
 
         &::before {
-            content: "\F0142";
-            font-size: 14px;
-            color: $white;
+            content: "/";
+            font-size: 15px;
+            color: #88929b;
             font-family: "Material Design Icons";
             padding-left: 8px;
         }
@@ -48,11 +83,13 @@
         }
 
         a {
-            color: $white;
+            color: #88929b;
             transition: all 0.5s ease;
+            color: #1f2938;
+            text-decoration: none;
 
             &:hover {
-                color: $gray-400;
+                color: #37404e;
             }
         }
     }

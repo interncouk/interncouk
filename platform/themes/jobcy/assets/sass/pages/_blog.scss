@@ -7,9 +7,11 @@
     border: none;
     box-shadow: $box-shadow;
     border-radius: 6px;
+    margin-right: 20px;
 
     .blog-img {
         border-radius: 6px 6px 0px 0px;
+        padding: 20px 30px 10px 30px;
 
         .bg-overlay {
             opacity: 0;
@@ -30,6 +32,42 @@
             bottom: 15px;
             right: 15px;
             opacity: 0;
+        }
+        
+        .img-fluid{
+            border-radius: 15px;
+        }
+    }
+
+    .card-body{
+        .blog__description{
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            overflow: hidden;
+            font-size: 14px;
+            color: #727272;
+        }
+        .btn-border {
+            border: 1px solid rgba(6, 18, 36, 0.1);
+            padding: 15px 23px 15px 23px;
+            border-radius: 10px;
+            background: #ffffff;
+            color: #111112;
+            font-weight: 400;
+            font-size: 16px;
+            transition-duration: 0.2s;
+            &:hover{
+                transition-duration: 0.2s;
+                transform: translateY(-3px);
+            }
+        }
+        .btn-brand-hover {
+            padding: 14px 25px 14px 25px;
+            &:hover{
+                background-color: #9777fa;
+                color: #ffffff;
+            }
         }
     }
 

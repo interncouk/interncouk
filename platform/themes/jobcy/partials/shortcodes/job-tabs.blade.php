@@ -1,4 +1,4 @@
-<section class="section bg-light">
+<section class="section bg-theme">
     <div class="job-tabs-container">
         <div class="row justify-content-center">
             <div class="col-lg-8">

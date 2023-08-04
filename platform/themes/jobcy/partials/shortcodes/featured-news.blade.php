@@ -1,10 +1,10 @@
-<section class="section bg-light">
-    <div class="container">
+<section class="bg-white">
+    <div class="theme-container">
         <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="section-title text-center mb-5">
-                    <h2 class="title mb-3">{!! BaseHelper::clean($shortcode->title) !!}</h2>
-                    <p class="text-muted">{!! BaseHelper::clean($shortcode->subtitle) !!}</p>
+            <div class="col-lg-12">
+                <div class="section-title text-left mb-5">
+                    <h2 class="section-main-title mb-3">From blog</h2>
+                    <p class="text-muted">Latest News & Events</p>
                 </div>
             </div>
             <!--end col-->
