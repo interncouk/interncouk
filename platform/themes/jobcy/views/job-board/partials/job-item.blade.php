@@ -19,14 +19,14 @@
         </div>
     @endif -->
     @if ($job->is_featured)
-        <div class="featured-label">
+        <!-- <div class="featured-label">
             <span class="featured">{{ __('featured') }}</span>
-        </div>
+        </div> -->
     @endif
     <div class="p-4 position-relative">
-        @if ($job->applicants_count)
+        <!-- @if ($job->applicants_count)
             <div class="job-applied-count"><i class="mdi mdi-fire text-danger"></i> <small class="fw-medium">{{ __(':count application(s)', ['count' => $job->applicants_count]) }}</small></div>
-        @endif
+        @endif -->
 
         <div class="row align-items-center g-lg-3 g-md-2 cursor-pointer" data-toggle="clickable" data-url="{{ $job->url }}">
             <!-- <div class="col-md-2">
@@ -73,7 +73,7 @@
                                 {{ $job->created_at->diffForHumans() }}
                             </span>
                         @endif
-                        <span class="text-primary salary_text">{{ $job->salary_text }}</span>
+                        <!-- <span class="text-primary salary_text">{{ $job->salary_text }}</span> -->
                     </div>
                 </div>
             </div>
@@ -118,12 +118,15 @@
             <div class="col-md-10">
                 <div class="d-flex">
                     @if($job->tags->isNotEmpty())
-                        <div>
+                        <div class="mt-3">
                             @foreach($job->tags->take(5) as $tag)
                                 <a href="{{ $tag->url }}">
-                                    <span class="badge bg-white text-dark border me-1">{{ $tag->name }}</span>
+                                    <span class="btn-small background-6 disc-btn me-2">{{ $tag->name }}</span>
                                 </a>
                             @endforeach
+                            @if ($job->is_featured)
+                                <span class="btn-small background-6 disc-btn cursor-pointer">{{ __('featured') }}</span>
+                            @endif
                         </div>
                     @endif
                 </div>
@@ -138,7 +141,7 @@
                                 <i class="uil uil-check-circle"></i>
                             </a>
                         @else
-                            @if ($job->apply_url)
+                            <!-- @if ($job->apply_url)
                                 <a href="#applyExternalJob" data-bs-toggle="modal" class="primary-link" data-job-name="{{ $job->name }}" data-job-id="{{ $job->id }}">
                                     <span>{{ __('Apply Now') }}</span>
                                     <i class="mdi mdi-chevron-double-right"></i>
@@ -154,7 +157,7 @@
                                     <span>{{ __('Apply Now') }}</span>
                                     <i class="mdi mdi-chevron-double-right"></i>
                                 </a>
-                            @endif
+                            @endif -->
                         @endif
                     </div>
                 @endif

@@ -661,6 +661,7 @@ body.show-admin-bar {
     }
 }
 
+
 .company-inner-image {
     border-radius: 15px;
 }
@@ -1145,5 +1146,37 @@ body.show-admin-bar {
                 font-size: 16px;
             }
         }
+    }
+}
+
+.btn-small {
+    border-radius: 6px;
+    padding: 7px 15px;
+    color: #37404e;
+    font-size: 14px;
+}
+
+.background-6 {
+    background-color: rgba(151, 119, 250, 0.12);
+}
+
+.job-box {
+    span.btn-small:hover {
+        transform: translateY(-3px);
+        transition-duration: 0.2s;
+    }
+    .btn:hover {
+        color: #212529;
+    }
+}
+.disc-btn {
+    &::before {
+        content: "";
+        height: 5px;
+        width: 5px;
+        background-color: #9777fa;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0px 5px 2px 0px;
     }
 }
