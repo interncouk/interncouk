@@ -1,6 +1,6 @@
 <ul {!! BaseHelper::clean($options) !!}>
     @foreach ($menu_nodes->loadMissing('metadata') as $key => $row)
-        <li class="nav-item dropdown dropdown-hover @if ($row->has_child) menu-item-has-children @endif {{ $row->css_class }}">
+        <li class="nav-item dropdown dropdown-hover px-1 @if ($row->has_child) menu-item-has-children @endif {{ $row->css_class }}">
             <a class="@if ($row->parent_id) dropdown-item @else nav-link @endif @if ($row->active) active @endif" href="{{ $row->url }}"
                 target="{{ $row->target }}" @if ($row->has_child) role="button" data-bs-toggle="dropdown" @endif>
                 @if ($iconImage = $row->getMetadata('icon_image', true))

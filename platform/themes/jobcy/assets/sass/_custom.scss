@@ -1169,6 +1169,7 @@ body.show-admin-bar {
         color: #212529;
     }
 }
+
 .disc-btn {
     &::before {
         content: "";
@@ -1178,5 +1179,23 @@ body.show-admin-bar {
         border-radius: 50%;
         display: inline-block;
         margin: 0px 5px 2px 0px;
+    }
+}
+
+.sign-button {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #9777fa;
+    display: inline-block;
+    position: relative;
+    padding-left: 13px;
+
+    &:hover {
+        color: #080a28;
+        transform: translateY(-3px);
+        transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
     }
 }

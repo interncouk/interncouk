@@ -38,7 +38,7 @@
                     <ul class="list-inline mb-0 text-center text-md-end">
                         @if (is_plugin_active('job-board'))
                             @if (!auth('account')->check())
-                                <li class="list-inline-item py-2 me-3 align-middle">
+                                <!-- <li class="list-inline-item py-2 me-3 align-middle">
                                     <a href="{{ route('public.account.login') }}" class="text-dark fw-medium fs-13">
                                         <i class="uil uil-user"></i> {{ __('Sign In') }}
                                     </a>
@@ -48,7 +48,7 @@
                                     <a href="#signupModal" class="text-dark fw-medium fs-13" data-bs-toggle="modal">
                                         <i class="uil uil-lock"></i> {{ __('Sign Up') }}
                                     </a>
-                                </li>
+                                </li> -->
                             @elseif ($account = auth('account')->user())
                                 <li class="list-inline-item py-2 align-middle me-3 dropdown">
                                     <a href="javascript:void(0)" data-bs-toggle="dropdown"
@@ -161,6 +161,19 @@
                 </ul>
             </div>
             @if (is_plugin_active('job-board'))
+                 @if (!auth('account')->check())
+                    <li class="list-inline-item py-2 me-3 align-middle pe-1 ps-5">
+                        <a href="{{ route('public.account.login') }}" class="sign-button">
+                            <i class="uil uil-user"></i> {{ __('Sign In') }}
+                        </a>
+                    </li>
+
+                    <li class="list-inline-item py-2 me-3 align- pe-3">
+                        <a href="#signupModal" class="sign-button" data-bs-toggle="modal">
+                            <i class="uil uil-lock"></i> {{ __('Sign Up') }}
+                        </a>
+                    </li>
+                @endif
                 <ul class="header-menu list-inline d-flex align-items-center mb-0">
                     {!! apply_filters('theme-header-right-nav', null) !!}
                     <a href="{{ route('public.account.jobs.create') }}" class="btn btn-primary me-2 d-none d-md-block"><i class="mdi mdi-plus"></i> {{ __('Post a job') }}</a>

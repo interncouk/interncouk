@@ -8,16 +8,31 @@
     min-width: 12rem;
     margin-top: 0;
     .dropdown-item {
-      font-size: 13px;
-      font-weight: 600;
-      text-transform: uppercase;
+      font-size: 14px;
+      font-family: "Montserrat", sans-serif;
+      font-style: normal;
+      font-weight: 500;
       color: $dark;
       background-color: $white;
       transition: all 0.5s ease;
+      position: relative;
 
       &:hover {
         color: $primary;
         padding-left: 14px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: -3px;
+        top: 45%;
+        width: 5px;
+        height: 5px;
+        background-color: #9777fa;
+        border-radius: 50%;
+        opacity: 0.7;
+        transition-duration: 0.2s;
       }
     }
     &.dropdown-menu-sm {
