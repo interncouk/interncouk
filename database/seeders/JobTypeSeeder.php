@@ -15,17 +15,8 @@ class JobTypeSeeder extends BaseSeeder
 
         $data = [
             [
-                'name' => 'Contract',
-            ],
-            [
-                'name' => 'Freelance',
-            ],
-            [
                 'name' => 'Full Time',
                 'is_default' => 1,
-            ],
-            [
-                'name' => 'Internship',
             ],
             [
                 'name' => 'Part Time',

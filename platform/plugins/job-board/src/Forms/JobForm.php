@@ -379,30 +379,16 @@ class JobForm extends FormAbstract
                 'label_attr' => ['class' => 'control-label'],
                 'choices' => ModerationStatusEnum::labels(),
             ])
-            ->add('is_freelance', 'onOff', [
-                'label' => __('Is freelance?'),
-                'label_attr' => ['class' => 'control-label'],
-                'default_value' => false,
-            ])
             ->add('categories[]', 'multiCheckList', [
-                'label' => __('Job categories'),
+                'label' => __('Internship Categories'),
                 'label_attr' => ['class' => 'control-label'],
                 'choices' => $categories,
                 'value' => old('categories', $selectedCategories),
             ]);
 
-        if (count($skills) > 0) {
-            $this->add('skills[]', 'multiCheckList', [
-                'label' => __('Job skills'),
-                'label_attr' => ['class' => 'control-label'],
-                'choices' => $skills,
-                'value' => old('skills', $selectedSkills),
-            ]);
-        }
-
         if (count($jobTypes) > 0) {
             $this->add('jobTypes[]', 'multiCheckList', [
-                'label' => __('Job types'),
+                'label' => __('Internship types'),
                 'label_attr' => ['class' => 'control-label'],
                 'choices' => $jobTypes,
                 'value' => old('jobTypes', $selectedJobTypes),
@@ -410,26 +396,6 @@ class JobForm extends FormAbstract
         }
 
         $this
-            ->add('career_level_id', 'customSelect', [
-                'label' => __('Career level'),
-                'label_attr' => ['class' => 'control-label'],
-                'choices' => [0 => __('-- select --')] + $careerLevels,
-            ])
-            ->add('functional_area_id', 'customSelect', [
-                'label' => __('Functional area'),
-                'label_attr' => ['class' => 'control-label'],
-                'choices' => [0 => __('-- select --')] + $functionalArea,
-            ])
-            ->add('degree_level_id', 'customSelect', [
-                'label' => __('Degree level'),
-                'label_attr' => ['class' => 'control-label'],
-                'choices' => [0 => __('-- select --')] + $degreeLevels,
-            ])
-            ->add('job_experience_id', 'customSelect', [
-                'label' => __('Job experience'),
-                'label_attr' => ['class' => 'control-label'],
-                'choices' => [0 => __('-- select --')] + $jobExperiences,
-            ])
             ->add('tag', 'tags', [
                 'label' => trans('plugins/job-board::job.tags'),
                 'label_attr' => ['class' => 'control-label'],
