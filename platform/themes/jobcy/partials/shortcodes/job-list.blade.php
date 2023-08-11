@@ -56,10 +56,10 @@
                         </div>
                     </div>
                     <div class="jobs-listing">
-                        @include(Theme::getThemeNamespace('views.job-board.partials.job-items'), ['jobs' => $jobs])
+                        @include(Theme::getThemeNamespace('views.job-board.partials.job-items'), ['jobs' => $jobs, 'isColumn6' => true])
                     </div>
                 </div>
-                @if (theme_option('show_map_on_jobs_page', 'yes') == 'yes')
+                <!-- @if (theme_option('show_map_on_jobs_page', 'yes') == 'yes')
                     @php
                         $latLng = json_encode(JobBoardHelper::getMapCenterLatLng());
                     @endphp
@@ -74,10 +74,10 @@
                             </div>
                         </div>
                     </div>
-                @endif
+                @endif -->
             </div>
 
-            @if (theme_option('show_map_on_jobs_page', 'yes') == 'yes')
+            <!-- @if (theme_option('show_map_on_jobs_page', 'yes') == 'yes')
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-jobs-map" aria-labelledby="offcanvas-jobs-map-label">
                     <div class="offcanvas-header">
                         <h5 id="offcanvas-jobs-map-label">{{ __('Jobs map') }}</h5>
@@ -89,13 +89,13 @@
                             data-center="{{ $latLng }}"></div>
                     </div>
                 </div>
-            @endif
+            @endif -->
         </div>
     </div>
 </section>
 
-@if (theme_option('show_map_on_jobs_page', 'yes') == 'yes')
+<!-- @if (theme_option('show_map_on_jobs_page', 'yes') == 'yes')
     <script id="traffic-popup-map-template" type="text/x-jquery-tmpl">
         @include(Theme::getThemeNamespace('views.job-board.partials.map'))
     </script>
-@endif
+@endif -->

@@ -689,6 +689,16 @@ body.show-admin-bar {
     }
 }
 
+// .jobs-listing div:first-child {
+//     --bs-gutter-x: 20px;
+//     --bs-gutter-y: 0;
+//     display: flex;
+//     flex-wrap: wrap;
+//     margin-left: calc(var(--bs-gutter-x)*-.5);
+//     margin-right: calc(var(--bs-gutter-x)*-.5);
+//     margin-top: calc(var(--bs-gutter-y)*-1);
+// }
+
 .navbar-collapse {
     ul.extra-menu-items {
         display: none;

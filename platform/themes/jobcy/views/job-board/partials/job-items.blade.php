@@ -1,7 +1,7 @@
 <input type="hidden" name="page" data-value="{{ $jobs->currentPage() }}">
 <input type="hidden" name="keyword" value="{{ BaseHelper::stringify(request()->query('keyword')) }}">
 
-<div>
+<div class="row">
     @switch(request()->input('layout'))
         @case('grid')
             <div class="row row-cols-md-2 row-cols-1 ">

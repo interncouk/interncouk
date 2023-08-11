@@ -40,7 +40,7 @@
                         <div class="row">
                             @foreach($featuredJobs as $job)
                             <div class="col-lg-6">
-                                @include(Theme::getThemeNamespace('views.job-board.partials.job-item'), ['job' => $job])
+                                @include(Theme::getThemeNamespace('views.job-board.partials.job-item'), ['job' => $job], ['isColumn6' => false])
                             </div>
                             @endforeach
                         </div>
@@ -54,7 +54,7 @@
                         <div class="row">
                             @foreach($recentJobs as $job)
                             <div class="col-lg-6">
-                                @include(Theme::getThemeNamespace('views.job-board.partials.job-item'), ['job' => $job])
+                                @include(Theme::getThemeNamespace('views.job-board.partials.job-item'), ['job' => $job], ['isColumn6' => false])
                             </div>
                             @endforeach
                         </div>
@@ -68,7 +68,7 @@
                         <div class="row">
                             @foreach($popularJobs as $job)
                             <div class="col-lg-6">
-                                @include(Theme::getThemeNamespace('views.job-board.partials.job-item'), ['job' => $job])
+                                @include(Theme::getThemeNamespace('views.job-board.partials.job-item'), ['job' => $job], ['isColumn6' => false])
                             </div>
                             @endforeach
                         </div>
