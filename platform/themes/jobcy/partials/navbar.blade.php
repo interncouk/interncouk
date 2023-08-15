@@ -50,7 +50,7 @@
                                     </a>
                                 </li> -->
                             @elseif ($account = auth('account')->user())
-                                <li class="list-inline-item py-2 align-middle me-3 dropdown">
+                                <!-- <li class="list-inline-item py-2 align-middle me-3 dropdown">
                                     <a href="javascript:void(0)" data-bs-toggle="dropdown"
                                        aria-expanded="false" style="color: #314047;">
                                         <img src="{{ $account->avatar_url }}" alt="{{ $account->name }}" width="30" height="30" class="rounded-circle me-1">
@@ -71,7 +71,7 @@
                                             </form>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> -->
                             @endif
 
                             @php $currencies = get_all_currencies(); @endphp
@@ -162,16 +162,39 @@
             </div>
             @if (is_plugin_active('job-board'))
                  @if (!auth('account')->check())
-                    <li class="list-inline-item py-2 me-3 align-middle pe-1 ps-5">
+                    <li class="list-inline-item py-2 me-3 align-middle pe-3 ps-5">
                         <a href="{{ route('public.account.login') }}" class="sign-button">
                             <i class="uil uil-user"></i> {{ __('Sign In') }}
                         </a>
                     </li>
 
-                    <li class="list-inline-item py-2 me-3 align- pe-3">
+                    <li class="list-inline-item py-2 me-3 align- pe-5">
                         <a href="#signupModal" class="sign-button" data-bs-toggle="modal">
                             <i class="uil uil-lock"></i> {{ __('Sign Up') }}
                         </a>
+                    </li>
+                @elseif ($account = auth('account')->user())
+                    <li class="list-inline-item py-2 align-middle me-5 dropdown">
+                        <a href="javascript:void(0)" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="color: #314047;">
+                            <img src="{{ $account->avatar_url }}" alt="{{ $account->name }}" width="30" height="30" class="rounded-circle me-1">
+                            <span class="d-none d-md-inline-block fw-medium">{{ __('Hi, :name', ['name' => Str::limit($account->name, 15)]) }}</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            @if ($account->isEmployer())
+                                <li><a class="dropdown-item" href="{{ route('public.account.dashboard') }}">{{ __('Employer Dashboard') }}</a></li>
+                            @else
+                                <li><a class="dropdown-item" href="{{ route('public.account.jobs.saved') }}">{{ __('Saved Jobs') }}</a></li>
+                                <li><a class="dropdown-item" href="{{ route('public.account.jobs.applied-jobs') }}">{{ __('Applied Jobs') }}</a></li>
+                            @endif
+                            <li><a class="dropdown-item" href="{{ route('public.account.settings') }}">{{ __('Account Settings') }}</a></li>
+                            <li>
+                                <a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" href="#">{{ __('Logout') }}</a>
+                                <form id="logout-form" action="{{ route('public.account.logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </li>
+                        </ul>
                     </li>
                 @endif
                 <ul class="header-menu list-inline d-flex align-items-center mb-0">

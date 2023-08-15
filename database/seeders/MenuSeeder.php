@@ -35,10 +35,6 @@ class MenuSeeder extends BaseSeeder
                     'location' => 'main-menu',
                     'items' => [
                         [
-                            'title' => 'Home',
-                            'url' => '/',
-                        ],
-                        [
                             'title' => 'Jobs',
                             'url' => '/jobs',
                             'children' => [
@@ -146,11 +142,6 @@ class MenuSeeder extends BaseSeeder
                                     'url' => Post::first()->url,
                                 ],
                             ],
-                        ],
-                        [
-                            'title' => 'Contact',
-                            'reference_id' => 3,
-                            'reference_type' => Page::class,
                         ],
                     ],
                 ],
