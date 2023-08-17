@@ -199,7 +199,9 @@
                 @endif
                 <ul class="header-menu list-inline d-flex align-items-center mb-0">
                     {!! apply_filters('theme-header-right-nav', null) !!}
+                    @if (!auth('account')->check() || (auth('account')->check() && auth('account')->user()->isEmployer()))
                     <a href="{{ route('public.account.jobs.create') }}" class="btn btn-primary me-2 d-none d-md-block"><i class="mdi mdi-plus"></i> {{ __('Post a job') }}</a>
+                    @endif
                     @if (auth('account')->check() && $account = auth('account')->user())
                         <li class="list-inline-item dropdown d-block d-md-none">
                             <a href="javascript:void(0)" class="header-item" id="userdropdown" data-bs-toggle="dropdown"
