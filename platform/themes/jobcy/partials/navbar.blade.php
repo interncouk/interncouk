@@ -162,13 +162,13 @@
             </div>
             @if (is_plugin_active('job-board'))
                  @if (!auth('account')->check())
-                    <li class="list-inline-item py-2 me-3 align-middle pe-3 ps-5">
+                    <li class="list-inline-item py-2 me-3 align-middle pe-3 ps-5 auth-button">
                         <a href="{{ route('public.account.login') }}" class="sign-button">
                             <i class="uil uil-user"></i> {{ __('Sign In') }}
                         </a>
                     </li>
 
-                    <li class="list-inline-item py-2 me-3 align- pe-5">
+                    <li class="list-inline-item py-2 me-3 align- pe-5 auth-button">
                         <a href="#signupModal" class="sign-button" data-bs-toggle="modal">
                             <i class="uil uil-lock"></i> {{ __('Sign Up') }}
                         </a>
