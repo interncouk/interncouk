@@ -29,11 +29,6 @@ class CompanyRequest extends Request
             'linkedin' => 'nullable|max:200',
             'instagram' => 'nullable|max:200',
             'latitude' => ['max:20', 'nullable', 'regex:/^[-]?(([0-8]?[0-9])\.(\d+))|(90(\.0+)?)$/'],
-            'longitude' => [
-                'max:20',
-                'nullable',
-                'regex:/^[-]?((((1[0-7][0-9])|([0-9]?[0-9]))\.(\d+))|180(\.0+)?)$/',
-            ],
             'status' => Rule::in(BaseStatusEnum::values()),
         ];
     }

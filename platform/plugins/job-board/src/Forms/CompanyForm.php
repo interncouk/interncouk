@@ -64,17 +64,6 @@ class CompanyForm extends FormAbstract
             ->add('rowOpen1', 'html', [
                 'html' => '<div class="row">',
             ])
-            ->add('ceo', 'text', [
-                'label' => __('Company CEO / President'),
-                'label_attr' => ['class' => 'control-label'],
-                'wrapper' => [
-                    'class' => 'form-group col-md-3',
-                ],
-                'attr' => [
-                    'placeholder' => __('Company CEO / President'),
-                    'data-counter' => 120,
-                ],
-            ])
             ->add('email', 'email', [
                 'label' => __('Email'),
                 'label_attr' => ['class' => 'control-label'],
@@ -114,28 +103,6 @@ class CompanyForm extends FormAbstract
             ->add('rowOpen2', 'html', [
                 'html' => '<div class="row">',
             ])
-            ->add('year_founded', 'number', [
-                'label' => __('Year founded'),
-                'label_attr' => ['class' => 'control-label'],
-                'wrapper' => [
-                    'class' => 'form-group col-md-3',
-                ],
-                'attr' => [
-                    'placeholder' => __('Ex: 1987'),
-                    'data-counter' => 10,
-                ],
-            ])
-            ->add('number_of_offices', 'number', [
-                'label' => __('Number of offices'),
-                'label_attr' => ['class' => 'control-label'],
-                'wrapper' => [
-                    'class' => 'form-group col-md-3',
-                ],
-                'attr' => [
-                    'placeholder' => __('Ex: 3'),
-                    'data-counter' => 10,
-                ],
-            ])
             ->add('number_of_employees', 'text', [
                 'label' => __('Number of employees'),
                 'label_attr' => ['class' => 'control-label'],
@@ -144,17 +111,6 @@ class CompanyForm extends FormAbstract
                 ],
                 'attr' => [
                     'placeholder' => __('Ex: 100-250'),
-                    'data-counter' => 10,
-                ],
-            ])
-            ->add('annual_revenue', 'text', [
-                'label' => __('Annual revenue'),
-                'label_attr' => ['class' => 'control-label'],
-                'wrapper' => [
-                    'class' => 'form-group col-md-3',
-                ],
-                'attr' => [
-                    'placeholder' => __('Ex: 2M'),
                     'data-counter' => 10,
                 ],
             ])
@@ -216,26 +172,6 @@ class CompanyForm extends FormAbstract
             'help_block' => [
                 'tag' => 'a',
                 'text' => __('Go here to get Latitude from address.'),
-                'attr' => [
-                    'href' => 'https://www.latlong.net/convert-address-to-lat-long.html',
-                    'target' => '_blank',
-                    'rel' => 'nofollow',
-                ],
-            ],
-        ])
-        ->add('longitude', 'text', [
-            'label' => __('Longitude'),
-            'label_attr' => ['class' => 'control-label'],
-            'wrapper' => [
-                'class' => 'form-group mb-3 col-md-6',
-            ],
-            'attr' => [
-                'placeholder' => 'Ex: 103.812530',
-                'data-counter' => 25,
-            ],
-            'help_block' => [
-                'tag' => 'a',
-                'text' => __('Go here to get Longitude from address.'),
                 'attr' => [
                     'href' => 'https://www.latlong.net/convert-address-to-lat-long.html',
                     'target' => '_blank',

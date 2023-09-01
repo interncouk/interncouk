@@ -29,15 +29,6 @@ class HookServiceProvider extends ServiceProvider
 
             Assets::addScriptsDirectly('vendor/core/packages/seo-helper/js/seo-helper.js')
                 ->addStylesDirectly('vendor/core/packages/seo-helper/css/seo-helper.css');
-
-            MetaBox::addMetaBox(
-                'seo_wrap',
-                trans('packages/seo-helper::seo-helper.meta_box_header'),
-                [$this, 'seoMetaBox'],
-                get_class($data),
-                'advanced',
-                'low'
-            );
         }
     }
 
