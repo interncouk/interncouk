@@ -1,6 +1,6 @@
 @if (is_plugin_active('newsletter'))
 
-    @if (!is_current_path('/'))
+    @if (!is_current_path('/') && !is_current_path('contact') )
     <div class="section-box mt-5">
         <div class="theme-container">
             <ul class="list-partners">

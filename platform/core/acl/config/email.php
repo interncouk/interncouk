@@ -1,5 +1,8 @@
 <?php
 
+$new_email = 'support@intern.co.uk';
+$old_email = 'contactus@Jobcy.com';
+
 return [
     'name' => 'core/acl::auth.settings.email.title',
     'description' => 'core/acl::auth.settings.email.description',
@@ -11,6 +14,8 @@ return [
             'can_off' => false,
             'variables' => [
                 'reset_link' => 'Reset password link',
+                'old_email' => $old_email,
+                'new_email' => $new_email,
             ],
         ],
     ],

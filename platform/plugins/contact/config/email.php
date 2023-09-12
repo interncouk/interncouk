@@ -1,5 +1,8 @@
 <?php
 
+$new_email = 'support@intern.co.uk';
+$old_email = 'contactus@Jobcy.com';
+
 return [
     'name' => 'plugins/contact::contact.settings.email.title',
     'description' => 'plugins/contact::contact.settings.email.description',
@@ -16,6 +19,8 @@ return [
                 'contact_phone' => 'Contact phone',
                 'contact_address' => 'Contact address',
                 'contact_content' => 'Contact content',
+                'old_email' => $old_email,
+                'new_email' => $new_email,
             ],
         ],
     ],

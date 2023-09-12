@@ -46,7 +46,8 @@ class PageSeeder extends BaseSeeder
             3 => [
                 'name' => 'Contact',
                 'content' =>
-                    Html::tag('div', '[contact-form title="Get in touch" subtitle="Start working with Jobcy that can provide everything you need to generate awareness, drive traffic, connect." image="general/contact.png" email="contactus@Jobcy.com" address="2453 Clinton StreetLittle Rock, California, USA" phone="(+245) 223 1245"][/contact-form]') .
+                    Html::tag('div', '[contact-form title="Get in touch" subtitle="Start working with Jobcy that can provide everything you need to generate awareness, drive traffic, connect." image="general/contact.png" email="support@intern.co.uk
+" address="" phone=""][/contact-form]') .
                     Html::tag('div', '[google-map]North Link Building, 10 Admiralty Street, 757695 Singapore[/google-map]'),
             ],
             4 => [
@@ -198,7 +199,8 @@ class PageSeeder extends BaseSeeder
             [
                 'name' => 'Liên hệ',
                 'content' =>
-                    Html::tag('div', '[contact-form title="Get in touch" subtitle="Start working with Jobcy that can provide everything you need to generate awareness, drive traffic, connect." image="general/contact.png" email="contactus@Jobcy.com" address="2453 Clinton StreetLittle Rock, California, USA" phone="(+245) 223 1245"][/contact-form]') .
+                    Html::tag('div', '[contact-form title="Get in touch" subtitle="Start working with Jobcy that can provide everything you need to generate awareness, drive traffic, connect." image="general/contact.png" email="support@intern.co.uk
+" address="" phone=""][/contact-form]') .
                     Html::tag(
                         'div',
                         '[google-map]North Link Building, 10 Admiralty Street, 757695 Singapore[/google-map]'

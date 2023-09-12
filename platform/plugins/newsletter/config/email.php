@@ -1,5 +1,8 @@
 <?php
 
+$new_email = 'support@intern.co.uk';
+$old_email = 'contactus@Jobcy.com';
+
 return [
     'name' => 'plugins/newsletter::newsletter.settings.email.templates.title',
     'description' => 'plugins/newsletter::newsletter.settings.email.templates.description',
@@ -25,5 +28,8 @@ return [
             ],
         ],
     ],
-    'variables' => [],
+    'variables' => [
+        'old_email' => $old_email,
+        'new_email' => $new_email,
+    ],
 ];
