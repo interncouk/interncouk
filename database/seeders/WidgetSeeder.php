@@ -31,7 +31,7 @@ class WidgetSeeder extends BaseSeeder
                     'position' => 0,
                     'data' => [
                         'id' => 'SiteInfoWidget',
-                        'name' => 'Jobcy',
+                        'name' => 'Intern.co.uk',
                         'about' => 'It is a long established fact that a reader will be of a page reader will be of at its layout.',
                         'follow_us_heading' => 'Follow us on:',
                         'social_links' => json_encode([
@@ -186,7 +186,7 @@ class WidgetSeeder extends BaseSeeder
                     'position' => 0,
                     'data' => [
                         'id' => 'SiteInfoWidget',
-                        'name' => 'Jobcy',
+                        'name' => 'Intern.co.uk',
                         'about' => 'It is a long established fact that a reader will be of a page reader will be of at its layout.',
                         'follow_us_heading' => 'Theo dõi chúng tôi tại:',
                         'social_links' => json_encode([

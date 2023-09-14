@@ -28,7 +28,7 @@ class PageSeeder extends BaseSeeder
             1 => [
                 'name' => 'Homepage',
                 'content' =>
-                    Html::tag('div', '[search-box subtitle="We have 150,000+ live jobs" title="Register your details for internship opportunities!" highlight_text="Jobcy" description="Find jobs, create trackable resumes and enrich your applications.Carefully crafted after analyzing the needs of different industries." image="general/process-02.png"][/search-box]') .
+                    Html::tag('div', '[search-box subtitle="We have 150,000+ live jobs" title="Register your details for internship opportunities!" highlight_text="Intern.co.uk" description="Find jobs, create trackable resumes and enrich your applications.Carefully crafted after analyzing the needs of different industries." image="general/process-02.png"][/search-box]') .
                     Html::tag('div', '[featured-job-categories title="Browser Jobs Categories" subtitle="Post a job to tell us about your requirements. We will match you with the right people."][/featured-job-categories]') .
                     Html::tag('div', '[job-tabs title="Internship Opportunities" subtitle="Post a job to tell us about your requirements. We will match you with the right people."][/job-tabs]') .
                     Html::tag('div', '[how-it-work title="How It Work" subtitle="Post a job to tell us about your requirements. We will match you with the right people." step_1_title="Register an account" step_1_description="Due to its widespread use as filler text for layouts, non-readability is of great importance." step_1_image="general/how-it-work-1.png" step_2_title="Find your job" step_2_description="There are many variations of passages of avaibookmark-label, but the majority lteration in some form." step_2_image="general/how-it-work-2.png" step_3_title="Apply for job" step_3_description="It is a long established fact that a reader will be distracted by the radable content of a page." step_3_image="general/how-it-work-2.png"][/how-it-work]') .
@@ -46,7 +46,7 @@ class PageSeeder extends BaseSeeder
             3 => [
                 'name' => 'Contact',
                 'content' =>
-                    Html::tag('div', '[contact-form title="Get in touch" subtitle="Start working with Jobcy that can provide everything you need to generate awareness, drive traffic, connect." image="general/contact.png" email="support@intern.co.uk
+                    Html::tag('div', '[contact-form title="Get in touch" subtitle="Start working with Intern.co.uk that can provide everything you need to generate awareness, drive traffic, connect." image="general/contact.png" email="support@intern.co.uk
 " address="" phone=""][/contact-form]') .
                     Html::tag('div', '[google-map]North Link Building, 10 Admiralty Street, 757695 Singapore[/google-map]'),
             ],
@@ -99,7 +99,7 @@ class PageSeeder extends BaseSeeder
                 'name' => 'Job Categories',
                 'content' =>
                     Html::tag('div', '[job-categories badge="Jobs Live Today" title="Browse Job By Categories" subtitle="Post a job to tell us about your requirements. We will match you with the right people."][/job-categories]') .
-                    Html::tag('div', '[start-working title="See everything about your employee at one place." subtitle="Start working with Jobcy that can provide everything you need to generate awareness, drive traffic, connect." button_1_icon="uil uil-rocket" button_1_text="Get Started Now" button_1_url="#" button_2_icon="uil uil-capsule" button_2_text="Free Trial" button_2_url="#"][/start-working]'),
+                    Html::tag('div', '[start-working title="See everything about your employee at one place." subtitle="Start working with Intern.co.uk that can provide everything you need to generate awareness, drive traffic, connect." button_1_icon="uil uil-rocket" button_1_text="Get Started Now" button_1_url="#" button_2_icon="uil uil-capsule" button_2_text="Free Trial" button_2_url="#"][/start-working]'),
             ],
             11 => [
                 'name' => 'Companies',
@@ -109,7 +109,7 @@ class PageSeeder extends BaseSeeder
             12 => [
                 'name' => 'Coming Soon',
                 'content' =>
-                    Html::tag('div', '[coming-soon title="We’re Launching Soon..!!" subtitle="Start working with Jobcy that can provide everything you need to generate awareness, drive traffic, connect." date="' . BaseHelper::formatDate(now()->addMonths(1)) . '" time="00:00" image="general/animat-rocket-color.gif"][/coming-soon]'),
+                    Html::tag('div', '[coming-soon title="We’re Launching Soon..!!" subtitle="Start working with Intern.co.uk that can provide everything you need to generate awareness, drive traffic, connect." date="' . BaseHelper::formatDate(now()->addMonths(1)) . '" time="00:00" image="general/animat-rocket-color.gif"][/coming-soon]'),
                 'template' => 'coming-soon',
             ],
             13 => [
@@ -199,7 +199,7 @@ class PageSeeder extends BaseSeeder
             [
                 'name' => 'Liên hệ',
                 'content' =>
-                    Html::tag('div', '[contact-form title="Get in touch" subtitle="Start working with Jobcy that can provide everything you need to generate awareness, drive traffic, connect." image="general/contact.png" email="support@intern.co.uk
+                    Html::tag('div', '[contact-form title="Get in touch" subtitle="Start working with Intern.co.uk that can provide everything you need to generate awareness, drive traffic, connect." image="general/contact.png" email="support@intern.co.uk
 " address="" phone=""][/contact-form]') .
                     Html::tag(
                         'div',

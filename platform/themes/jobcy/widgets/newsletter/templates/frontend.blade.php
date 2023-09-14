@@ -6,47 +6,47 @@
             <ul class="list-partners">
                 <li class="wow animate__animated animate__fadeInUp hover-up" data-wow-delay="0s">
                     <a href="#">
-                        <figure><img alt="jobhub" src="{{ asset('storage/logos/samsung.svg') }}" /></figure>
+                        <figure><img alt="Intern.co.uk" src="{{ asset('storage/logos/samsung.svg') }}" /></figure>
                     </a>
                 </li>
                 <li class="wow animate__animated animate__fadeInUp hover-up" data-wow-delay=".1s">
                     <a href="#">
-                        <figure><img alt="jobhub" src="{{ asset('storage/logos/google.svg') }}" /></figure>
+                        <figure><img alt="Intern.co.uk" src="{{ asset('storage/logos/google.svg') }}" /></figure>
                     </a>
                 </li>
                 <li class="wow animate__animated animate__fadeInUp hover-up" data-wow-delay=".2s">
                     <a href="#">
-                        <figure><img alt="jobhub" src="{{ asset('storage/logos/facebook.svg') }}" /></figure>
+                        <figure><img alt="Intern.co.uk" src="{{ asset('storage/logos/facebook.svg') }}" /></figure>
                     </a>
                 </li>
                 <li class="wow animate__animated animate__fadeInUp hover-up" data-wow-delay=".3s">
                     <a href="#">
-                        <figure><img alt="jobhub" src="{{ asset('storage/logos/pinterest.svg') }}" /></figure>
+                        <figure><img alt="Intern.co.uk" src="{{ asset('storage/logos/pinterest.svg') }}" /></figure>
                     </a>
                 </li>
                 <li class="wow animate__animated animate__fadeInUp hover-up" data-wow-delay=".4s">
                     <a href="#">
-                        <figure><img alt="jobhub" src="{{ asset('storage/logos/avaya.svg') }}" /></figure>
+                        <figure><img alt="Intern.co.uk" src="{{ asset('storage/logos/avaya.svg') }}" /></figure>
                     </a>
                 </li>
                 <li class="wow animate__animated animate__fadeInUp hover-up" data-wow-delay=".5s">
                     <a href="#">
-                        <figure><img alt="jobhub" src="{{ asset('storage/logos/forbes.svg') }}" /></figure>
+                        <figure><img alt="Intern.co.uk" src="{{ asset('storage/logos/forbes.svg') }}" /></figure>
                     </a>
                 </li>
                 <li class="wow animate__animated animate__fadeInUp hover-up" data-wow-delay=".1s">
                     <a href="#">
-                        <figure><img alt="jobhub" src="{{ asset('storage/logos/avis.svg') }}" /></figure>
+                        <figure><img alt="Intern.co.uk" src="{{ asset('storage/logos/avis.svg') }}" /></figure>
                     </a>
                 </li>
                 <li class="wow animate__animated animate__fadeInUp hover-up" data-wow-delay=".2s">
                     <a href="#">
-                        <figure><img alt="jobhub" src="{{ asset('storage/logos/nielsen.svg') }}" /></figure>
+                        <figure><img alt="Intern.co.uk" src="{{ asset('storage/logos/nielsen.svg') }}" /></figure>
                     </a>
                 </li>
                 <li class="wow animate__animated animate__fadeInUp hover-up" data-wow-delay=".3s">
                     <a href="#">
-                        <figure><img alt="jobhub" src="{{ asset('storage/logos/doordash.svg') }}" /></figure>
+                        <figure><img alt="Intern.co.uk" src="{{ asset('storage/logos/doordash.svg') }}" /></figure>
                     </a>
                 </li>
             </ul>

@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12 col-12 d-none d-md-block">
                     <div class="box-image-findjob findjob-homepage-2 ml-0 wow animate__animated animate__fadeIn">
-                        <figure><img alt="jobhub" class="mw-100" src="{{asset('storage/general/img-findjob.png') }}" /></figure>
+                        <figure><img alt="intern.co.uk" class="mw-100" src="{{asset('storage/general/img-findjob.png') }}" /></figure>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 col-12">
