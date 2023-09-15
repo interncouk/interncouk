@@ -21,7 +21,7 @@ class ThemeOptionSeeder extends BaseSeeder
 
         $data = [
             'en_US' => [
-                'site_title' => 'Intern.co.uk - Laravel Job Board Script',
+                'site_title' => 'Intern.co.uk',
                 'seo_description' => 'Intern.co.uk – is a modern job board Laravel script designed to connect people looking for a job with work hunting employers. This script represents simple design to help build the website for advertising vacancies, finding suitable staff, receiving employer’s resumes and CV',
                 'copyright' => '©' . Carbon::now()->format('Y') . ' Intern.co.uk. All right reserved.',
                 'favicon' => 'general/favicon.png',
