@@ -51,7 +51,40 @@ class AuthenticationController extends Controller
      *
      * @group Authentication
      */
-    
+    public function register(RegisterRequest $request, BaseHttpResponse $response)
+    {
+        $request->merge(['password' => Hash::make($request->input('password'))]);
+
+        $request->merge(['name' => $request->input('first_name') . ' ' . $request->input('last_name')]);
+
+        $user = ApiHelper::newModel()->create($request->only([
+            'first_name',
+            'last_name',
+            'name',
+            'email',
+            'phone',
+            'password',
+        ]));
+
+        if (ApiHelper::getConfig('verify_email')) {
+            $token = Hash::make(Str::random(32));
+
+            $user->email_verify_token = $token;
+
+            /**
+             * @var User $user
+             */
+            $user->sendEmailVerificationNotification();
+        } else {
+            $user->confirmed_at = Carbon::now();
+        }
+
+        $user->save();
+
+        return $response
+            ->setMessage(__('Registered successfully! We emailed you to verify your account!'));
+    }
+
     /**
      * Login
      *
