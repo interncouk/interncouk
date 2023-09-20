@@ -31,4 +31,10 @@ return [
         'subscribed' => 'Subscribed',
         'unsubscribed' => 'Unsubscribed',
     ],
+    'validation' => [
+        'email' => [
+            'required' => '11The email field is required.', 
+            'email' => 'The email field must be a valid email address.',
+        ],
+    ],
 ];

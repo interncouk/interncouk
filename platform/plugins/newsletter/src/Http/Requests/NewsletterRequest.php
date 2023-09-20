@@ -24,6 +24,13 @@ class NewsletterRequest extends Request
             'status' => Rule::in(NewsletterStatusEnum::values()),
         ];
 
+        $customMessages = [
+            'email.required' => 'The email field is required.',
+            'email.email' => 'Please enter a valid email address.',
+            'email.unique' => 'The email address has already been taken for subscribed users.',
+            'status.in' => 'The selected status is invalid.',
+        ];
+
         if (is_plugin_active('captcha')) {
             $rules += Captcha::rules();
 
@@ -39,4 +46,13 @@ class NewsletterRequest extends Request
     {
         return is_plugin_active('captcha') ? Captcha::attributes() : [];
     }
+
+    public function messages()
+    {
+        return [
+            'email.required' => 'The email field is required.',
+            'email.email' => 'The email must be vaild',
+        ];
+    }
+
 }
