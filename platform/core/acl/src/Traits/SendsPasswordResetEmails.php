@@ -24,10 +24,14 @@ trait SendsPasswordResetEmails
         $response = $this->broker()->sendResetLink(
             $this->credentials($request)
         );
-
-        return $response == Password::RESET_LINK_SENT
-            ? $this->sendResetLinkResponse($request, $response)
-            : $this->sendResetLinkFailedResponse($request, $response);
+        print ("Test Start");
+        print $response;
+        // return $response == Password::RESET_LINK_SENT
+        //     ? $this->sendResetLinkResponse($request, $response)
+        //     : $this->sendResetLinkFailedResponse($request, $response);
+        $response == Password::RESET_LINK_SENT
+        ? print("Test Success")
+        : print("Test Fail");
     }
 
     protected function validateEmail(Request $request): void
