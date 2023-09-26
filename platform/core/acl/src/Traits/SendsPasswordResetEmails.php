@@ -17,7 +17,7 @@ trait SendsPasswordResetEmails
     public function sendResetLinkEmail(Request $request)
     {
         $this->validateEmail($request);
-        print ("Test Start");
+        // print ("Test Start");
 
 
         // We will send the password reset link to this user. Once we have attempted
@@ -26,13 +26,13 @@ trait SendsPasswordResetEmails
         $response = $this->broker()->sendResetLink(
             $this->credentials($request)
         );
-        print $response;
-        // return $response == Password::RESET_LINK_SENT
-        //     ? $this->sendResetLinkResponse($request, $response)
-        //     : $this->sendResetLinkFailedResponse($request, $response);
+        // print $response;
         return $response == Password::RESET_LINK_SENT
-        ? print("Test Success")
-        : print("Test Fail");
+            ? $this->sendResetLinkResponse($request, $response)
+            : $this->sendResetLinkFailedResponse($request, $response);
+        // return $response == Password::RESET_LINK_SENT
+        // ? print("Test Success")
+        // : print("Test Fail");
     }
 
     protected function validateEmail(Request $request): void
