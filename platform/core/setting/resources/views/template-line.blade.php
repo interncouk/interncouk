@@ -21,10 +21,20 @@
                     <td>
                         <a class="hover-underline a-detail-template"
                            href="{{ route('setting.email.template.edit', [$type, $module, $key]) }}">
-                            {{ trans($template['title']) }}
+                           @if (isset($template['title']))
+                               {{ trans($template['title']) }}
+                           @else
+                               {{ "Title not found for element at index $key" }}
+                           @endif
                         </a>
                     </td>
-                    <td>{{ trans($template['description']) }}</td>
+                    <td>
+                        @if (isset($template['description']))
+                            {{ trans($template['description']) }}
+                        @else
+                            {{ "Title not found for element at index $key" }}
+                        @endif
+                    </td>
 
                     <td class="text-center template-setting-on-off">
                         @if ($type !== 'core' && Arr::get($template, 'can_off', false))
