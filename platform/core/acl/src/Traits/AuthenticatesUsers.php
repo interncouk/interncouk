@@ -90,12 +90,12 @@ trait AuthenticatesUsers
 
         return $request->wantsJson()
             ? new Response('', 204)
-            : redirect()->intended($this->redirectPath());
+            : redirect()->route('public.account.settings');
     }
 
     protected function authenticated(Request $request, Authenticatable $user)
     {
-        //
+        return redirect()->route('public.account.settings');
     }
 
     protected function sendFailedLoginResponse()

@@ -26,9 +26,8 @@ trait RegistersUsers
 
         $this->registered($request, $user);
 
-        return $request->wantsJson()
-            ? new Response('', 201)
-            : redirect($this->redirectPath());
+        return $this->registered($request, $user)
+            ?: redirect()->route('public.account.settings');
     }
 
     protected function guard()
@@ -38,6 +37,6 @@ trait RegistersUsers
 
     protected function registered(Request $request, $user)
     {
-        //
+        return redirect()->route('public.account.settings');
     }
 }
