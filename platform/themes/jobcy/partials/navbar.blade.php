@@ -258,3 +258,26 @@
             </div><!--end modal-dialog-->
         </div>
     @endif
+
+    @if (is_plugin_active('job-board') && !auth('account')->check())
+        <div class="modal fade" id="signupInternModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-5">
+                        <div class="position-absolute end-0 top-0 p-3">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="auth-content">
+                            <div class="w-100">
+                                <div class="text-center mb-4">
+                                    <h5>{{ __('Sign Up') }}</h5>
+                                    <p class="text-muted">{{ __('Sign Up and get access to all the features.') }}</p>
+                                </div>
+                                @include(Theme::getThemeNamespace('views.job-board.auth.register-as-intern'))
+                            </div>
+                        </div>
+                    </div><!--end modal-body-->
+                </div><!--end modal-content-->
+            </div><!--end modal-dialog-->
+        </div>
+    @endif
